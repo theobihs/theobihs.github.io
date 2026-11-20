@@ -57,7 +57,7 @@ window.SITE = {
     { name: 'Sedona', kind: 'mountains', area: 'Red Rock Country, north-central Arizona',
       line: 'Red rocks and blue skies. We keep coming back.', lat: 34.87, lon: -111.76,
       photo: 'photos/sedona-red-rocks.jpg', story: '',
-      photos: ['photos/sedona-bell-rock.jpg', 'photos/sedona-bell-rock-2.jpg', 'photos/sedona-drive.jpg'] },
+      photos: ['photos/sedona-golden-cliffs.jpg', 'photos/sedona-bell-rock.jpg', 'photos/sedona-bell-rock-2.jpg', 'photos/sedona-drive.jpg'] },
     { name: 'Sabino Canyon', kind: 'mountains', area: 'Coronado National Forest, northeast Tucson',
       line: 'Desert canyon, creek and saguaros on the edge of town.', lat: 32.31, lon: -110.82,
       photo: 'photos/sabino-creek-wade.jpg', story: '',
@@ -88,7 +88,8 @@ window.SITE = {
       photos: ['photos/roper-family-selfie.jpg', 'photos/roper-braids.jpg', 'photos/roper-hug-lake.jpg', 'photos/roper-porch-couple.jpg', 'photos/roper-swing-mom.jpg', 'photos/roper-swing-dad.jpg', 'photos/roper-swing-view.jpg', 'photos/roper-breakfast.jpg', 'photos/roper-walk.jpg', 'photos/roper-sign.jpg', 'photos/roper-overlook.jpg', 'photos/roper-selfie-mountains.jpg', 'photos/roper-buoys-glow.jpg', 'photos/roper-porch-swing.jpg', 'photos/roper-cabins-sunset.jpg', 'photos/roper-reeds-sunset.jpg', 'photos/roper-blue-hour.jpg', 'photos/roper-road-dusk.jpg', 'photos/cabin-porch.jpg', 'photos/hero-lake.jpg'] },
     { name: 'Patagonia Lake', kind: 'lakes', area: 'Patagonia Lake State Park, south of Tucson',
       line: 'A lake tucked into the grassland hills near the border.', lat: 31.49, lon: -110.85,
-      photo: '', story: '' },
+      photo: 'photos/patagonia-panorama.jpg', story: '',
+      photos: ['photos/patagonia-selfie.jpg', 'photos/patagonia-dad-rock.jpg', 'photos/patagonia-tree-boat.jpg', 'photos/patagonia-dad-tree.jpg', 'photos/patagonia-table-stand.jpg', 'photos/patagonia-mom-baby.jpg', 'photos/patagonia-glasses.jpg', 'photos/patagonia-mom-kayak.jpg', 'photos/patagonia-bridge.jpg', 'photos/patagonia-table-wide.jpg', 'photos/patagonia-selfie-2.jpg', 'photos/patagonia-reflection.jpg', 'photos/patagonia-sign.jpg'] },
   ],
 
   /* ---------- PHOTOS & VIDEOS ----------
@@ -98,6 +99,12 @@ window.SITE = {
        { youtube: 'dQw4w9WgXcQ', caption: 'Grand Canyon day' },   (the code after v= in a YouTube link)
      While this list is empty, the site shows the paintings instead. */
   gallery: [
+    { photo: 'photos/patagonia-panorama.jpg', caption: 'Big skies over Patagonia Lake' },
+    { photo: 'photos/patagonia-dad-rock.jpg', caption: 'Watching the water with Daddy' },
+    { photo: 'photos/patagonia-tree-boat.jpg', caption: 'Tree-hugging by the lake' },
+    { photo: 'photos/patagonia-selfie.jpg', caption: 'Family day at Patagonia Lake' },
+    { photo: 'photos/patagonia-reflection.jpg', caption: 'Clouds in the water' },
+    { photo: 'photos/sedona-golden-cliffs.jpg', caption: 'Golden hour on the Sedona cliffs' },
     { photo: 'photos/sabino-creek-rest.jpg', caption: 'Cooling off in Sabino Creek' },
     { video: 'videos/sabino-creek-carry.mp4', caption: 'Crossing the creek, Sabino Canyon' },
     { photo: 'photos/sabino-creek-wade.jpg', caption: 'Wading in Sabino Creek' },
