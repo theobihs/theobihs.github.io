@@ -21,8 +21,8 @@ window.SITE = {
        Example: heroPhotos: ['photos/hero.jpg', 'photos/IMG_4021.JPG', 'photos/IMG_4107.JPG'],
      heroVideo: optional short silent clip instead, e.g. 'videos/hero.mp4' (under 25 MB).
        Leave as '' to use the photos. Leave both empty to show the painted canyon. */
-  heroPhotos: ['photos/hero-cabins.jpg'],
-  heroVideo: 'videos/hero-cabins.mp4',
+  heroPhotos: ['photos/hero-lake.jpg'],
+  heroVideo: 'videos/hero-lake.mp4',
 
   about: [
     "We're a family in Tucson. When we get the chance, we pack up and head somewhere new: up the mountain, out to a lake cabin, or to the edge of the Grand Canyon.",
