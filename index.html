@@ -214,8 +214,28 @@ nav a:hover{opacity:1;color:var(--gold)}
 .tnav small{color:var(--mist);font-size:14px}
 .tnav .kick{margin-bottom:4px;font-size:12px}
 
+/* full pages */
+.page>section:first-child{padding-top:clamp(104px,11vw,150px)}
+.page .back{margin-bottom:28px}
+.ph{font-size:clamp(44px,6vw,84px);margin:0 0 .25em}
+#mapPage .mapGrid{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}
+#mapPage .ph{font-size:clamp(40px,4.6vw,64px)}
+/* homepage previews */
+.latest3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.lcard{display:block;text-decoration:none;color:inherit}
+.lPic{position:relative;display:block;aspect-ratio:4/5;border-radius:16px;overflow:hidden;background:#000;margin-bottom:16px;box-shadow:0 16px 36px rgba(0,0,0,.35)}
+.lPic img,.lPic svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.lcard:hover .lPic img{transform:scale(1.04)}
+.lcard h3{font-size:clamp(26px,2.4vw,32px);margin:0 0 .2em}
+.lcard .ln{display:block;color:var(--mist);font-size:16px;line-height:1.5}
+.lcard:hover h3{color:var(--gold)}
+.miniMap{display:block;max-width:440px;justify-self:center;width:100%}
+.miniMap svg{width:100%;height:auto;display:block;transition:transform .4s}
+.miniMap:hover svg{transform:scale(1.02)}
+#map-home .mapGrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+
 /* tips & resources page */
-.tipsHead{padding-top:clamp(110px,12vw,160px)}
+.tipsHead{padding-top:clamp(104px,11vw,150px)}
 .tipsHead .back{margin-bottom:32px}
 .tipsHead h1{font-size:clamp(44px,6vw,84px);margin:0 0 .3em}
 .tipsHead p{font-size:clamp(18px,1.6vw,21px);max-width:52ch}
@@ -247,6 +267,8 @@ dialog.lb::backdrop{background:rgba(10,7,5,.9)}
 .lbNav.prev{left:14px}.lbNav.next{right:14px}
 
 @media(max-width:900px){
+  .latest3{grid-template-columns:minmax(0,1fr)}.lPic{aspect-ratio:4/3}
+  #mapPage .mapGrid,#map-home .mapGrid{grid-template-columns:minmax(0,1fr)}
   .intro,.mapGrid,.two,.fgrid,.tBody{grid-template-columns:minmax(0,1fr)}
   .entry,.entry:nth-child(even){grid-template-columns:minmax(0,1fr);gap:22px}
   .entry:nth-child(even) .ePic{order:0}
@@ -276,7 +298,7 @@ dialog.lb::backdrop{background:rgba(10,7,5,.9)}
 <header id="hdr">
   <div class="bar">
     <a class="brand" href="#top"><svg><use href="#mark"/></svg><span>The Obih Adventures</span></a>
-    <nav class="scroll" aria-label="Main"><a href="#about">About<span class="wide-only"> us</span></a><a href="#places">Our trips</a><a href="#map">Map</a><a href="#photos">Photos</a><a href="#bucket">Bucket list</a><a href="#tips">Tips<span class="wide-only"> &amp; resources</span></a><a href="#guestbook">Guestbook</a></nav>
+    <nav class="scroll" aria-label="Main"><a href="#about">About<span class="wide-only"> us</span></a><a href="#trips">Our trips</a><a href="#map">Map</a><a href="#photos">Photos</a><a href="#bucket">Bucket list</a><a href="#tips">Tips<span class="wide-only"> &amp; resources</span></a><a href="#guestbook">Guestbook</a></nav>
   </div>
 </header>
 
@@ -296,34 +318,29 @@ dialog.lb::backdrop{background:rgba(10,7,5,.9)}
   </div>
 </section>
 
-<section class="band topo" id="places">
+<section class="band topo" id="trips-home">
   <div class="wrap">
-    <div class="head"><div><h2>Where we've been</h2><p class="soft" style="margin:0">Pick a place to see more.</p></div></div>
-    <div class="kchips" id="kChips" role="group" aria-label="Show trips by type"></div>
-    <div class="journal" id="journal"></div>
-    <div class="gmore"><button class="btn ghost" id="jMore" hidden></button></div>
+    <div class="head"><div><h2>Where we've been</h2><p class="soft" style="margin:0">Our latest trips.</p></div><a class="btn ghost" id="allTripsBtn" href="#trips">See all trips</a></div>
+    <div class="latest3" id="latest3"></div>
   </div>
 </section>
 
-<section class="band" id="map">
+<section class="band" id="map-home">
   <div class="wrap mapGrid">
     <div>
       <h2>Our Arizona map</h2>
       <p class="soft">From home in Tucson to the Colorado River and up to the Grand Canyon.</p>
-      <div class="mkey" id="mapKey"></div>
-      <svg id="mapSvg" viewBox="0 0 1560 1120" role="group" aria-label="Map of Arizona with the places we have visited"></svg>
-      <div class="mchips" id="mapChips" role="group" aria-label="Places"></div>
+      <div class="mkey" id="mapKeyHome"></div>
+      <a class="btn" href="#map" style="margin-top:12px">Explore the map <svg width="18" height="18" aria-hidden="true"><use href="#arrow"/></svg></a>
     </div>
-    <div class="mapCard" id="mapCard" aria-live="polite"></div>
+    <a class="miniMap" href="#map" aria-label="Open the map"><svg id="miniMap" viewBox="0 0 1000 1120" aria-hidden="true"></svg></a>
   </div>
 </section>
 
-<section class="band paper" id="photos">
+<section class="band paper" id="photos-home">
   <div class="wrap">
-    <div class="head" style="margin-bottom:28px"><div><h2>Photos &amp; videos</h2><p class="soft" style="margin:0">A few favourites from each trip.</p></div></div>
-    <div class="gchips" id="gChips" role="group" aria-label="Show photos from"></div>
-    <div id="gallery"></div>
-    <p class="soft small" id="galNote" hidden style="margin-top:14px">Paintings shown until our photos are added.</p>
+    <div class="head" style="margin-bottom:28px"><div><h2>Photos &amp; videos</h2><p class="soft" style="margin:0">A few favourites from each trip.</p></div><a class="btn ghost" href="#photos">See all photos</a></div>
+    <div class="masonry" id="favs"></div>
   </div>
 </section>
 
@@ -344,13 +361,50 @@ dialog.lb::backdrop{background:rgba(10,7,5,.9)}
 </section>
 </main>
 
+<main id="tripsPage" class="page" hidden>
+<section class="band topo" id="places">
+  <div class="wrap">
+    <a class="back" href="#top">← Home</a>
+    <div class="head"><div><h1 class="ph">Where we've been</h1><p class="soft" style="margin:0">Pick a place to see more.</p></div></div>
+    <div class="kchips" id="kChips" role="group" aria-label="Show trips by type"></div>
+    <div class="journal" id="journal"></div>
+    <div class="gmore"><button class="btn ghost" id="jMore" hidden></button></div>
+  </div>
+</section>
+</main>
+<main id="mapPage" class="page" hidden>
+<section class="band" id="map">
+  <div class="wrap"><a class="back" href="#top">← Home</a></div>
+  <div class="wrap mapGrid">
+    <div>
+      <h1 class="ph">Our Arizona map</h1>
+      <p class="soft">From home in Tucson to the Colorado River and up to the Grand Canyon.</p>
+      <div class="mkey" id="mapKey"></div>
+      <svg id="mapSvg" viewBox="0 0 1560 1120" role="group" aria-label="Map of Arizona with the places we have visited"></svg>
+      <div class="mchips" id="mapChips" role="group" aria-label="Places"></div>
+    </div>
+    <div class="mapCard" id="mapCard" aria-live="polite"></div>
+  </div>
+</section>
+</main>
+<main id="photosPage" class="page" hidden>
+<section class="band paper" id="photos">
+  <div class="wrap">
+    <a class="back" href="#top">← Home</a>
+    <div class="head" style="margin-bottom:28px"><div><h1 class="ph">Photos &amp; videos</h1><p class="soft" style="margin:0">Grouped by trip, newest first.</p></div></div>
+    <div class="gchips" id="gChips" role="group" aria-label="Show photos from"></div>
+    <div id="gallery"></div>
+    <p class="soft small" id="galNote" hidden style="margin-top:14px">Paintings shown until our photos are added.</p>
+  </div>
+</section>
+</main>
 <main id="tripView" hidden></main>
 <main id="tipsView" hidden></main>
 
 <footer>
   <div class="wrap fgrid">
     <div><a class="brand" href="#top"><svg><use href="#mark"/></svg>The Obih Adventures</a><p class="soft small" style="margin-top:12px">A family travel journal from Tucson, Arizona.</p></div>
-    <div><h4>Explore</h4><ul><li><a href="#places">Our trips</a></li><li><a href="#map">Map</a></li><li><a href="#photos">Photos</a></li><li><a href="#tips">Tips &amp; resources</a></li></ul></div>
+    <div><h4>Explore</h4><ul><li><a href="#trips">Our trips</a></li><li><a href="#map">Map</a></li><li><a href="#photos">Photos</a></li><li><a href="#tips">Tips &amp; resources</a></li></ul></div>
     <div><h4>Say hi</h4><ul><li><a href="#bucket">Bucket list</a></li><li><a href="#guestbook">Guestbook</a></li><li><a href="#about">About us</a></li></ul></div>
   </div>
 </footer>
@@ -491,10 +545,10 @@ let jKind='all';
 $('#kChips').innerHTML=[['all',places.length,'places']].concat(kinds.map(k=>[k,nk(k),k==='parks'&&nk(k)>1?'national parks':KLAB[k]])).map(([k,n,l])=>`<button class="kchip${k==='all'?'':' k-'+k}" data-k="${k}" aria-pressed="${k==='all'}"><b>${n}</b>${esc(l)}</button>`).join('');
 $('#kChips').addEventListener('click',e=>{const b=e.target.closest('[data-k]');if(!b)return;jKind=b.dataset.k;
   $('#kChips').querySelectorAll('[data-k]').forEach(x=>x.setAttribute('aria-pressed',x===b));renderJ()});
-$('#mapKey').innerHTML=kinds.map(k=>`<span><i class="dotk k-${k}"></i>${esc(KIND[k])}</span>`).join('');
+$('#mapKeyHome').innerHTML=$('#mapKey').innerHTML=kinds.map(k=>`<span><i class="dotk k-${k}"></i>${esc(KIND[k])}</span>`).join('');
 
 /* trips as journal entries, newest first */
-const JMAX=5;let jOpen=false;
+const JMAX=999;let jOpen=true;
 const entry=(p,k)=>{const m=mediaOf[p.id],th=m.filter(g=>g.photo&&g.photo!==p.photo).slice(0,3),rest=m.length-(p.photo?1:0)-th.length;
   return `<a class="entry" href="#${slug(p)}"><span class="ePic">${pic(p,'j'+k,false)}</span><span class="eText"><span class="kick">${esc(KIND[p.kind])}${has(p.when)?' · '+esc(p.when):''}</span><h3>${esc(p.name)}</h3><span class="area">${esc(p.area)}</span>${p.line?`<span class="ln">${esc(p.line)}</span>`:''}${th.length?`<span class="eThumbs">${th.map(g=>im(g.photo,'',true)).join('')}${rest>0?`<span class="eCount">+${rest} more</span>`:''}</span>`:''}<span class="more">Read our story ${ARROW}</span></span></a>`};
 const renderJ=()=>{const list=jKind==='all'?order:order.filter(p=>p.kind===jKind),all=jOpen||jKind!=='all';
@@ -526,7 +580,7 @@ drawMap();
 
 /* photos & videos: grouped by trip, newest trip first; each photo keeps its own shape */
 const galOf={};S.gallery.forEach(g=>{const t=tripOf(g)||'more';(galOf[t]=galOf[t]||[]).push(g)});
-const gTrips=order.filter(p=>galOf[p.id]),GPER=3;let gSel='all';
+const gTrips=order.filter(p=>galOf[p.id]),GPER=999;let gSel='all';
 const fig=(g,attrs)=>`<figure><button class="tile" ${attrs} aria-label="${tileLabel(g)}">${thumb(g)}</button>${g.caption?`<figcaption>${esc(g.caption)}</figcaption>`:''}</figure>`;
 const group=(p,all)=>{const t=p?p.id:'more',list=galOf[t],show=all?list:list.slice(0,GPER),n=p?mediaOf[p.id].length:list.length;
   return `<section class="ggroup"><div class="ghead"><div><h3>${p?esc(p.name):'More photos'}</h3>${p&&has(p.when)?`<span class="soft small">${esc(p.when)}</span>`:''}</div>${p?`<a class="glink" href="#${slug(p)}">All ${n} photos &amp; videos ${ARROW}</a>`:''}</div><div class="masonry">${show.map((g,k)=>fig(g,`data-t="${t}" data-k="${k}"`)).join('')}</div></section>`};
@@ -542,6 +596,15 @@ if(S.gallery.length){
   $('#gallery').innerHTML=`<div class="masonry">${places.slice(0,6).map((p,i)=>`<figure><div class="tile art">${pic(p,'p'+i)}</div><figcaption>${esc(p.name)}</figcaption></figure>`).join('')}</div>`;
 }
 
+/* homepage previews */
+$('#latest3').innerHTML=order.slice(0,3).map((p,k)=>`<a class="lcard" href="#${slug(p)}"><span class="lPic">${pic(p,'l'+k,true)}</span><span class="kick">${esc(KIND[p.kind])}${has(p.when)?' · '+esc(p.when):''}</span><h3>${esc(p.name)}</h3>${p.line?`<span class="ln">${esc(p.line)}</span>`:''}</a>`).join('');
+$('#allTripsBtn').innerHTML=`See all ${places.length} trips ${ARROW}`;
+{const favs=gTrips.map(p=>galOf[p.id].find(g=>g.photo)).filter(Boolean).slice(0,6);
+ if(favs.length){$('#favs').innerHTML=favs.map((g,k)=>fig(g,`data-f="${k}"`)).join('');$('#favs').addEventListener('click',e=>{const b=e.target.closest('[data-f]');if(b)openLB(favs,+b.dataset.f)})}
+ else $('#photos-home').remove()}
+{const mm=$('#miniMap'),M=([lon,lat])=>[((lon+115.3)*166).toFixed(0),((37.4-lat)*165+20).toFixed(0)];
+ mm.innerHTML=`<path class="az" d="M${AZ.map(p=>M(p).join(' ')).join(' L')}Z"/>`+places.map(p=>{const[x,y]=M([p.lon,p.lat]);return `<g class="pin k-${p.kind}"><circle class="halo" r="26" cx="${x}" cy="${y}" style="opacity:.18"/><circle class="dot" r="12" cx="${x}" cy="${y}"/></g>`}).join('')+(()=>{const[x,y]=M([-110.97,32.22]);return `<g class="pin home"><circle class="dot" r="8" cx="${x}" cy="${y}"/></g>`})()}
+
 /* bucket list */
 $('#bList').innerHTML=S.bucketList.length?S.bucketList.map(b=>`<li class="${b.done?'done':''}"><span class="tick" aria-hidden="true">${b.done?'✓':''}</span><span>${esc(b.name)}</span>${b.done?'<span class="sr">(done)</span>':''}</li>`).join(''):'<li class="soft">Coming soon.</li>';
 
@@ -555,7 +618,7 @@ const renderTrip=id=>{const p=byId(id),i=order.indexOf(p),m=mediaOf[id],st=p.pho
   const story=(has(p.story)?paras(p.story):'')+SECT.filter(([k])=>has(p[k])).map(([k,h])=>`<h2 class="sh">${h}</h2>${paras(p[k])}`).join('');
   tv.innerHTML=`<article>
   <div class="tCover">${p.photo?`<button class="tile" data-m="0" aria-label="Enlarge photo of ${esc(p.name)}">${pic(p,'tc',false)}</button>`:pic(p,'tc')}
-    <div class="tCoverText wrap"><a class="back" href="#places">← All our trips</a><div><span class="kick">${esc(KIND[p.kind])}${has(p.when)?' · '+esc(p.when):''}</span><h1>${esc(p.name)}</h1><p class="area">${esc(p.area)}</p></div></div></div>
+    <div class="tCoverText wrap"><a class="back" href="#trips">← All our trips</a><div><span class="kick">${esc(KIND[p.kind])}${has(p.when)?' · '+esc(p.when):''}</span><h1>${esc(p.name)}</h1><p class="area">${esc(p.area)}</p></div></div></div>
   <section class="band paper"><div class="wrap tBody">
     <div class="tStory">${p.line?`<p class="lead">${esc(p.line)}</p>`:''}${story||'<p class="soft coming">Our story from here is coming soon.</p>'}${review(p.review)}</div>
     <aside class="tFacts"><dl><dt>Where</dt><dd>${esc(p.area)}</dd>${has(p.when)?`<dt>When</dt><dd>${esc(p.when)}</dd>`:''}<dt>Type of trip</dt><dd>${esc(KIND[p.kind])}</dd><dt>Photos &amp; videos</dt><dd>${m.length}</dd></dl><button class="btn ghost sm" id="shareTrip">Share this trip</button></aside>
@@ -579,15 +642,20 @@ const renderTips=()=>{const T=S.tips||{},secs=(T.sections||[]).filter(x=>x&&has(
   <section class="band paper"><div class="wrap tipsGrid">${secs.map(tipSec).join('')}</div></section></article>`};
 let view='home',homeY=0;
 const jump=y=>{try{scrollTo({top:y,behavior:'instant'})}catch(e){scrollTo(0,y)}};
-const route=()=>{const id=fromHash(),want=id||(location.hash==='#tips'?'tips':'home');
-  if(want!=='home'){if(view===want)return;if(view==='home')homeY=scrollY;tv.hidden=true;tipsV.hidden=true;
+/* pages: #trips, #map, #photos, #tips, and #trip-<name> */
+const PAGES={trips:[$('#tripsPage'),'Our trips'],map:[$('#mapPage'),'Our Arizona map'],photos:[$('#photosPage'),'Photos & videos'],tips:[tipsV,'Camping Tips & Resources']};
+const mem={};let clicked=0;
+document.addEventListener('click',e=>{if(e.target.closest('a[href^="#"]'))clicked=Date.now()},true);
+const hideAll=()=>{tv.hidden=true;Object.values(PAGES).forEach(([el])=>el.hidden=true)};
+const route=()=>{const id=fromHash(),h=location.hash.slice(1),want=id||(PAGES[h]?h:'home'),fresh=Date.now()-clicked<350;
+  if(want!=='home'){if(view===want)return;mem[view]=scrollY;if(view==='home')homeY=scrollY;hideAll();
     if(id){renderTrip(id);tv.hidden=false;document.title=byId(id).name+' · '+S.title}
-    else{renderTips();tipsV.hidden=false;document.title='Camping Tips & Resources · '+S.title}
-    home.hidden=true;view=want;jump(0);hdr.classList.add('solid');return}
+    else{if(want==='tips')renderTips();PAGES[want][0].hidden=false;document.title=PAGES[want][1]+' · '+S.title}
+    home.hidden=true;view=want;jump(id||fresh?0:(mem[want]||0));hdr.classList.add('solid');return}
   if(view==='home')return;
-  tv.hidden=true;tv.innerHTML='';tipsV.hidden=true;tipsV.innerHTML='';home.hidden=false;view='home';document.title=S.title;
+  hideAll();tv.innerHTML='';home.hidden=false;view='home';document.title=S.title;
   let t=null;try{t=location.hash.length>1&&document.getElementById(decodeURIComponent(location.hash.slice(1)))}catch(e){}
-  if(t)t.scrollIntoView({behavior:'instant'});else jump(homeY)};
+  if(t){const go=()=>t.scrollIntoView({behavior:'instant'});go();setTimeout(go,300);setTimeout(go,900)}else jump(homeY)};
 const hdr=$('#hdr'),onScroll=()=>hdr.classList.toggle('solid',scrollY>120||view!=='home');addEventListener('scroll',onScroll,{passive:true});
 addEventListener('hashchange',route);
 route();onScroll();

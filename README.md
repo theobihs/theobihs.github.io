@@ -89,6 +89,12 @@ Each place in `site-data.js` has empty slots: `when`, `journey`, `campsite`, `ex
 Type into any of them and that part appears in the trip's pop-up; empty ones stay hidden.
 A campground review template (ratings 1 to 5) is in the notes at the top of the places list.
 
+## Pages
+
+The homepage is a highlights tour (opening photo, about us, latest 3 trips, a small map,
+one favourite photo from each recent trip, bucket list). Full pages:
+`#trips` (all trips, with filters), `#map`, `#photos`, `#tips`, and one page per trip.
+
 ## Trip pages and order
 
 Every place gets its own page, e.g. `theobihs.github.io/#trip-mount-lemmon`.
