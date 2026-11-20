@@ -52,7 +52,8 @@ window.SITE = {
       photos: ['photos/lemmon-family-aspens.jpg', 'photos/lemmon-shoulders.jpg', 'photos/lemmon-silly-pose.jpg', 'photos/lemmon-selfie-view.jpg', 'photos/lemmon-campsite.jpg', 'photos/lemmon-hammock.jpg', 'photos/lemmon-mug.jpg', 'photos/lemmon-pines-up.jpg', 'photos/lemmon-vista.jpg', 'photos/lemmon-clouds.jpg', 'photos/lemmon-chairlift.jpg', 'photos/lemmon-selfie-view-2.jpg'] },
     { name: 'Grand Canyon', kind: 'parks', area: 'Northern Arizona',
       line: 'Standing at the rim together.', lat: 36.06, lon: -112.11,
-      photo: '', story: '' },
+      photo: 'photos/gc-rim-view.jpg', story: '',
+      photos: ['photos/gc-rim-pose.jpg', 'photos/gc-sunset-family.jpg', 'photos/gc-sunset-mom.jpg', 'photos/gc-sunset-shoulders.jpg', 'photos/gc-sunset-arms.jpg', 'photos/sedona-red-rocks.jpg', 'photos/sedona-bell-rock.jpg', 'photos/sedona-bell-rock-2.jpg', 'photos/sedona-drive.jpg'] },
     { name: 'Sabino Canyon', kind: 'mountains', area: 'Coronado National Forest, northeast Tucson',
       line: 'Desert canyon, creek and saguaros on the edge of town.', lat: 32.31, lon: -110.82,
       photo: '', story: '' },
@@ -89,6 +90,12 @@ window.SITE = {
        { youtube: 'dQw4w9WgXcQ', caption: 'Grand Canyon day' },   (the code after v= in a YouTube link)
      While this list is empty, the site shows the paintings instead. */
   gallery: [
+    { photo: 'photos/gc-rim-view.jpg', caption: 'Taking in the Grand Canyon' },
+    { photo: 'photos/gc-sunset-family.jpg', caption: 'Sunset on the Grand Canyon trip' },
+    { photo: 'photos/gc-rim-pose.jpg', caption: 'On the rim' },
+    { photo: 'photos/sedona-red-rocks.jpg', caption: 'Red rocks of Sedona on the drive' },
+    { video: 'videos/gc-road.mp4', caption: 'On the road' },
+    { photo: 'photos/gc-sunset-arms.jpg', caption: 'Sunset joy' },
     { photo: 'photos/roper-braids.jpg', caption: 'Hair braiding by Roper Lake' },
     { video: 'videos/roper-cabins-sunset.mp4', caption: 'Sunset over the Roper Lake cabins' },
     { photo: 'photos/roper-porch-couple.jpg', caption: 'Golden hour on the cabin porch' },
