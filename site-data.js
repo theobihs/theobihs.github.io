@@ -13,7 +13,14 @@
 window.SITE = {
 
   title: 'The Obih Adventures',
-  tagline: '',   /* optional line under the title on the opening screen; leave '' for none */
+  /* Opening screen words. Leave any of them '' to hide it.
+     headline: the big words. If '', the site name is shown big instead.
+     intro:    a short line under the headline.
+     button:   the button that takes visitors to the trips. */
+  headline: 'Making Memories, One Adventure at a Time.',
+  intro: "Our family's digital scrapbook and camping journal.",
+  button: 'Explore Our Adventures',
+  tagline: '',   /* older setting, used only if intro is '' */
 
   /* Opening screen.
      heroPhotos: one or more photos. With several, they fade slowly from one
@@ -63,12 +70,12 @@ window.SITE = {
     { name: 'Mount Lemmon', kind: 'mountains', area: 'Santa Catalina Mountains, above Tucson',
       line: 'Cool pine forest an hour up the mountain from home.', lat: 32.44, lon: -110.79,
       photo: 'photos/lemmon-tent-pines.jpg', story: '',
-      when: '', journey: '', campsite: '', experience: '', moments: '',
+      when: 'Most recently November 2026', journey: '', campsite: '', experience: '', moments: '',
       photos: ['photos/lemmon-family-aspens.jpg', 'photos/lemmon-shoulders.jpg', 'photos/lemmon-silly-pose.jpg', 'photos/lemmon-selfie-view.jpg', 'photos/lemmon-campsite.jpg', 'photos/lemmon-hammock.jpg', 'photos/lemmon-mug.jpg', 'photos/lemmon-pines-up.jpg', 'photos/lemmon-vista.jpg', 'photos/lemmon-clouds.jpg', 'photos/lemmon-chairlift.jpg', 'photos/lemmon-selfie-view-2.jpg'] },
     { name: 'Grand Canyon', kind: 'parks', area: 'Northern Arizona',
       line: 'Standing at the rim together.', lat: 36.06, lon: -112.11,
       photo: 'photos/gc-rim-view.jpg', story: '',
-      when: '', journey: '', campsite: '', experience: '', moments: '',
+      when: 'October 2025', journey: '', campsite: '', experience: '', moments: '',
       photos: ['photos/gc-rim-pose.jpg', 'photos/gc-sunset-family.jpg', 'photos/gc-sunset-mom.jpg', 'photos/gc-sunset-shoulders.jpg', 'photos/gc-sunset-arms.jpg'] },
     { name: 'Sedona', kind: 'mountains', area: 'Red Rock Country, north-central Arizona',
       line: 'Red rocks and blue skies. We keep coming back.', lat: 34.87, lon: -111.76,
@@ -83,37 +90,37 @@ window.SITE = {
     { name: 'Madera Canyon', kind: 'mountains', area: 'Santa Rita Mountains, south of Tucson',
       line: 'Shady trails and birdsong in the Santa Ritas.', lat: 31.72, lon: -110.88,
       photo: 'photos/madera-couple.jpg', story: '',
-      when: '', journey: '', campsite: '', experience: '', moments: '',
+      when: 'Most recently November 2026', journey: '', campsite: '', experience: '', moments: '',
       photos: ['photos/madera-trail-kids.jpg', 'photos/madera-bridge-kids.jpg', 'photos/madera-creek.jpg', 'photos/madera-laughing.jpg', 'photos/madera-hair-flip.jpg'] },
     { name: 'Pinetop', kind: 'mountains', area: 'White Mountains, northeastern Arizona',
       line: 'Summer in the cool ponderosa pines.', lat: 34.14, lon: -109.96,
       photo: 'photos/pinetop-family-pines.jpg', story: '',
-      when: '', journey: '', campsite: '', experience: '', moments: '',
+      when: 'July 2026', journey: '', campsite: '', experience: '', moments: '',
       photos: ['photos/pinetop-bridge-family.jpg', 'photos/pinetop-pattycake.jpg', 'photos/pinetop-shoulders.jpg', 'photos/pinetop-lake-explorer.jpg', 'photos/pinetop-dock.jpg', 'photos/pinetop-blanket.jpg', 'photos/pinetop-shoulders-side.jpg', 'photos/pinetop-silly-face.jpg', 'photos/pinetop-lake-geese.jpg', 'photos/pinetop-tall-pines.jpg', 'photos/pinetop-lake-clouds.jpg', 'photos/pinetop-meadow-sky.jpg', 'photos/family-picnic-2.jpg', 'photos/family-picnic-1.jpg'] },
     { name: 'Dead Horse Ranch', kind: 'lakes', area: 'Dead Horse Ranch State Park, Cottonwood',
       line: 'A cabin stay by the Verde River, with cottonwoods, pines and creek splashing.', lat: 34.76, lon: -112.02,
       photo: 'photos/deadhorse-cabin-family.jpg', story: '',
-      when: '', journey: '', campsite: '', experience: '', moments: '',
+      when: 'July 2025', journey: '', campsite: '', experience: '', moments: '',
       photos: ['photos/deadhorse-creek-splash.jpg', 'photos/deadhorse-river-carry.jpg', 'photos/deadhorse-river-log.jpg', 'photos/deadhorse-cottonwoods.jpg', 'photos/deadhorse-pines-pose.jpg', 'photos/deadhorse-pines-seated.jpg', 'photos/deadhorse-trail-sign.jpg', 'photos/deadhorse-cabin-family-2.jpg'] },
     { name: 'Lake Havasu', kind: 'lakes', area: 'Lake Havasu State Park, Lake Havasu City',
       line: 'A cabin stay on the Colorado River, with sunsets on the beach and a boat ride through the canyon.', lat: 34.50, lon: -114.36,
       photo: 'photos/havasu-sunset-chairs.jpg', story: '',
-      when: '', journey: '', campsite: '', experience: '', moments: '',
+      when: 'March 2025', journey: '', campsite: '', experience: '', moments: '',
       photos: ['photos/havasu-shore-walk.jpg', 'photos/havasu-beach-pjs.jpg', 'photos/havasu-sunset-buoys.jpg', 'photos/havasu-cabin.jpg', 'photos/havasu-boat-dad.jpg', 'photos/havasu-canyon-cove.jpg', 'photos/havasu-phone-booth.jpg'] },
     { name: 'Alamo Lake', kind: 'lakes', area: 'Alamo Lake State Park, near Wenden',
       line: 'A cabin stay on quiet water, far from everything.', lat: 34.23, lon: -113.58,
       photo: 'photos/alamo-chairs.jpg', story: '',
-      when: '', journey: '', campsite: '', experience: '', moments: '',
+      when: 'December 2025', journey: '', campsite: '', experience: '', moments: '',
       photos: ['photos/alamo-family-view.jpg', 'photos/alamo-sunset-joy.jpg', 'photos/alamo-cabin-porch-2.jpg', 'photos/alamo-reflection.jpg', 'photos/alamo-shoulders.jpg', 'photos/alamo-road-pose.jpg', 'photos/alamo-road-mom.jpg', 'photos/alamo-road-dad.jpg', 'photos/alamo-sunset-family.jpg', 'photos/alamo-cabin-porch.jpg', 'photos/alamo-dawn.jpg'] },
     { name: 'Roper Lake', kind: 'lakes', area: 'Roper Lake State Park, near Safford',
       line: 'A lakeside cabin stay under Mount Graham.', lat: 32.76, lon: -109.70,
       photo: 'photos/roper-lake-overlook.jpg', story: '',
-      when: '', journey: '', campsite: '', experience: '', moments: '',
+      when: 'March 2026', journey: '', campsite: '', experience: '', moments: '',
       photos: ['photos/roper-family-selfie.jpg', 'photos/roper-braids.jpg', 'photos/roper-hug-lake.jpg', 'photos/roper-porch-couple.jpg', 'photos/roper-swing-mom.jpg', 'photos/roper-swing-dad.jpg', 'photos/roper-swing-view.jpg', 'photos/roper-breakfast.jpg', 'photos/roper-walk.jpg', 'photos/roper-sign.jpg', 'photos/roper-overlook.jpg', 'photos/roper-selfie-mountains.jpg', 'photos/roper-buoys-glow.jpg', 'photos/roper-porch-swing.jpg', 'photos/roper-cabins-sunset.jpg', 'photos/roper-reeds-sunset.jpg', 'photos/roper-blue-hour.jpg', 'photos/roper-road-dusk.jpg', 'photos/cabin-porch.jpg', 'photos/hero-lake.jpg'] },
     { name: 'Patagonia Lake', kind: 'lakes', area: 'Patagonia Lake State Park, south of Tucson',
       line: 'A lake tucked into the grassland hills near the border.', lat: 31.49, lon: -110.85,
       photo: 'photos/patagonia-panorama.jpg', story: '',
-      when: '', journey: '', campsite: '', experience: '', moments: '',
+      when: 'March 2024', journey: '', campsite: '', experience: '', moments: '',
       photos: ['photos/patagonia-selfie.jpg', 'photos/patagonia-dad-rock.jpg', 'photos/patagonia-tree-boat.jpg', 'photos/patagonia-dad-tree.jpg', 'photos/patagonia-table-stand.jpg', 'photos/patagonia-mom-baby.jpg', 'photos/patagonia-glasses.jpg', 'photos/patagonia-mom-kayak.jpg', 'photos/patagonia-bridge.jpg', 'photos/patagonia-table-wide.jpg', 'photos/patagonia-selfie-2.jpg', 'photos/patagonia-reflection.jpg', 'photos/patagonia-sign.jpg'] },
   ],
 
