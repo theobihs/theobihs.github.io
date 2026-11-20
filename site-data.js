@@ -21,8 +21,8 @@ window.SITE = {
        Example: heroPhotos: ['photos/hero.jpg', 'photos/IMG_4021.JPG', 'photos/IMG_4107.JPG'],
      heroVideo: optional short silent clip instead, e.g. 'videos/hero.mp4' (under 25 MB).
        Leave as '' to use the photos. Leave both empty to show the painted canyon. */
-  heroPhotos: ['photos/hero-lake.jpg'],
-  heroVideo: 'videos/hero-lake.mp4',
+  heroPhotos: ['photos/roper-buoys-glow.jpg', 'photos/roper-porch-swing.jpg', 'photos/roper-blue-hour.jpg', 'photos/roper-road-dusk.jpg'],
+  heroVideo: '',
 
   about: [
     "We're a family in Tucson. When we get the chance, we pack up and head somewhere new: up the mountain, out to a lake cabin, or to the edge of the Grand Canyon.",
@@ -73,7 +73,7 @@ window.SITE = {
     { name: 'Roper Lake', kind: 'lakes', area: 'Roper Lake State Park, near Safford',
       line: 'A lakeside cabin stay under Mount Graham.', lat: 32.76, lon: -109.70,
       photo: 'photos/roper-lake-overlook.jpg', story: '',
-      photos: ['photos/hero-lake.jpg', 'photos/cabin-porch.jpg', 'photos/hero-cabins.jpg'] },
+      photos: ['photos/roper-buoys-glow.jpg', 'photos/roper-porch-swing.jpg', 'photos/roper-cabins-sunset.jpg', 'photos/roper-reeds-sunset.jpg', 'photos/roper-blue-hour.jpg', 'photos/roper-road-dusk.jpg', 'photos/cabin-porch.jpg', 'photos/hero-lake.jpg'] },
     { name: 'Patagonia Lake', kind: 'lakes', area: 'Patagonia Lake State Park, south of Tucson',
       line: 'A lake tucked into the grassland hills near the border.', lat: 31.49, lon: -110.85,
       photo: '', story: '' },
@@ -86,6 +86,9 @@ window.SITE = {
        { youtube: 'dQw4w9WgXcQ', caption: 'Grand Canyon day' },   (the code after v= in a YouTube link)
      While this list is empty, the site shows the paintings instead. */
   gallery: [
+    { photo: 'photos/roper-buoys-glow.jpg', caption: 'Last light on Roper Lake' },
+    { photo: 'photos/roper-porch-swing.jpg', caption: 'Porch swing at sunset' },
+    { photo: 'photos/roper-cabins-sunset.jpg', caption: 'Roper Lake cabins' },
     { photo: 'photos/family-picnic-2.jpg', caption: 'Picnic in the pines at Pinetop' },
     { photo: 'photos/roper-lake-overlook.jpg', caption: 'Roper Lake overlook' },
     { photo: 'photos/hero-cabins.jpg', caption: 'Sunset over the Roper Lake cabins' },
