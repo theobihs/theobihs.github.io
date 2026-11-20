@@ -89,6 +89,12 @@ Each place in `site-data.js` has empty slots: `when`, `journey`, `campsite`, `ex
 Type into any of them and that part appears in the trip's pop-up; empty ones stay hidden.
 A campground review template (ratings 1 to 5) is in the notes at the top of the places list.
 
+## Trip pages and order
+
+Every place gets its own page, e.g. `theobihs.github.io/#trip-mount-lemmon`.
+Trips are listed newest first, using the month and year written in `when` (e.g. 'July 2026').
+Places with no date go at the end.
+
 ## Photos sorted by trip
 
 The Photos section sorts gallery pictures into trips by itself. If one ends up under the wrong

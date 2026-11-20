@@ -16,94 +16,95 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
 <style>
-/* LOOK: nature-inspired editorial. Big real photos, few words, lots of air.
-   COLOUR: forest green, warm cream, terracotta accents, sage for quiet details, charcoal text, white cards.
+/* LOOK: nature-inspired editorial, like a family travel magazine. Big real photos, few words, lots of air.
+   COLOUR: forest green, warm cream, terracotta accents, sage for quiet details, charcoal text, white.
    TYPE: DM Serif Display for headings, DM Sans for everything else.
-   LAYOUT: full-screen opening photo, then one idea per band: about, trips, map, photos, bucket list, guestbook, footer. */
+   HOME: split opening (words + latest trips | photo), about, trips as journal entries (newest first), map, photos by trip, bucket list.
+   TRIP PAGES: cover photo, story beside details, photos in a mixed-size layout, previous/next trip. */
 :root{color-scheme:light;
   --green:#294638;--green-d:#1f362b;--cream:#F7F4EA;--terra:#C46E4E;--terra-d:#A85A3D;--sage:#A5B29A;--char:#30352F;--white:#FFFFFF;
-  --soft:#5E645B;--rule:rgba(48,53,47,.14);--line:rgba(247,244,234,.16)}
+  --soft:#5E645B;--rule:rgba(48,53,47,.14);--line:rgba(247,244,234,.18);--pad:max(5vw,18px)}
 *{box-sizing:border-box;min-width:0}
 [hidden]{display:none!important}
 body{margin:0;background:var(--cream);color:var(--char);font:17px/1.65 "DM Sans",system-ui,sans-serif;overflow-x:clip}
 h1,h2,h3{font-family:"DM Serif Display",Georgia,serif;font-weight:400;line-height:1.08;text-wrap:balance;margin:0 0 .35em;letter-spacing:-.005em}
 h2{font-size:clamp(38px,4.8vw,56px)}h3{font-size:28px}
-p{margin:0 0 1em;max-width:62ch}
+p{margin:0 0 1em;max-width:64ch}
 a{color:inherit;text-underline-offset:4px}
 html{scroll-padding-top:68px;scroll-behavior:smooth}
 :focus-visible{outline:2px solid var(--terra);outline-offset:3px}
 button{font:inherit;font-size:16px;color:inherit}
-.wrap{max-width:1240px;margin:0 auto;padding:0 max(5vw,18px)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 var(--pad)}
 .band{padding:clamp(64px,9vw,120px) 0;position:relative}
 .green{background:var(--green) var(--topo) center/900px repeat;color:var(--cream)}
 .white{background:var(--white)}
-.soft{color:var(--soft)}
-.green .soft{color:var(--sage)}
+.soft{color:var(--soft)}.green .soft{color:var(--sage)}
 .small{font-size:14px}
-.eyebrow{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra-d);margin:0 0 14px}
+.eyebrow{display:block;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-d);margin:0 0 12px}
 .green .eyebrow{color:var(--sage)}
 .btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;background:var(--terra-d);color:#fff;border:0;font-weight:700;text-decoration:none;cursor:pointer;transition:background .2s,transform .2s}
-.btn:hover{background:#93492F}
-.btn:active{transform:translateY(1px)}
+.btn:hover{background:#93492F}.btn:active{transform:translateY(1px)}
 .btn.ghost{background:transparent;color:inherit;border:1.5px solid currentColor}
-.btn.ghost:hover{background:rgba(48,53,47,.06)}
+.btn.ghost:hover{background:rgba(127,127,127,.1)}
 .btn.sm{min-height:40px;padding:0 18px;font-size:15px}
 .scroll{overflow-x:auto}.scroll a{flex:none}
+.gmore{margin-top:36px;text-align:center}
 
 /* header */
-header{position:fixed;inset:0 0 auto;z-index:30;color:#fff;transition:background .35s,box-shadow .35s,color .35s}
-header.solid{background:rgba(247,244,234,.95);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--rule);color:var(--char)}
-.bar{max-width:1240px;margin:0 auto;padding:0 max(5vw,18px);display:flex;align-items:center;gap:20px;min-height:68px}
+header.site{position:sticky;top:0;z-index:30;background:rgba(247,244,234,.95);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--rule)}
+.bar{max-width:1240px;margin:0 auto;padding:0 var(--pad);display:flex;align-items:center;gap:20px;min-height:68px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"DM Serif Display",Georgia,serif;font-size:24px;flex:none}
 .brand svg{width:34px;height:34px;color:var(--terra)}
 nav.scroll{display:flex;gap:4px;margin-left:auto}
-nav a{padding:10px 12px;text-decoration:none;font-size:15px;font-weight:500;white-space:nowrap;opacity:.9;border-radius:8px;transition:color .2s}
-nav a:hover{opacity:1;color:var(--terra)}
-header.solid nav a:hover{color:var(--terra-d)}
+nav a{padding:10px 12px;text-decoration:none;font-size:15px;font-weight:500;white-space:nowrap;border-radius:8px;transition:color .2s}
+nav a:hover{color:var(--terra-d)}
 
-/* opening */
-.hero{position:relative;min-height:min(94vh,880px);display:flex;align-items:flex-end;overflow:hidden;color:#fff;background:var(--green-d)}
-.hero>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-@media(min-width:900px){
-.hero.tall>.heroImg{filter:blur(30px) brightness(.75);transform:scale(1.2)}
-.hero.tall>video{z-index:1;left:auto;right:max(5vw,18px);top:96px;bottom:auto;height:calc(100% - 140px);width:auto;aspect-ratio:9/20;border-radius:20px;box-shadow:0 30px 60px rgba(0,0,0,.45)}
-.hero.tall .heroText{padding-right:calc(max(5vw,18px) + (min(94vh,880px) - 140px) * .45 + 48px)}
-.hero.tall .vbtn{right:calc(max(5vw,18px) + 16px);bottom:60px}
-}
+/* opening: words on cream | photo */
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1.2fr);min-height:min(calc(100vh - 68px),880px)}
+.heroCopy{display:flex;flex-direction:column;justify-content:center;padding:clamp(40px,6vw,88px) clamp(24px,4vw,64px) clamp(36px,5vw,64px) max(var(--pad),calc((100vw - 1240px)/2 + var(--pad)))}
+.hero h1{font-size:clamp(40px,4vw,62px);line-height:1.05;max-width:15ch;margin-bottom:.3em}
+.hero h1.name{font-size:clamp(52px,6.5vw,96px);max-width:9ch}
+.heroIntro{font-size:clamp(18px,1.5vw,21px);color:var(--soft);max-width:34ch;margin-bottom:28px}
+.heroCopy .btn{align-self:flex-start}
+.recentWrap{margin-top:clamp(36px,5vw,64px);padding-top:22px;border-top:1px solid var(--rule)}
+.recent3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.recent{text-decoration:none;display:grid;gap:8px}
+.rPic{position:relative;display:block;aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:var(--green-d)}
+.rPic img,.rPic svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.recent:hover .rPic img{transform:scale(1.04)}
+.rTxt b{display:block;font-weight:700;font-size:15px;line-height:1.3}.rTxt small{color:var(--soft);font-size:13px}
+.recent:hover b{color:var(--terra-d)}
+.heroPhoto{position:relative;overflow:hidden;margin:16px 16px 16px 0;border-radius:22px;background:var(--green-d)}
+.heroPhoto>svg,.heroPhoto>video,.heroImg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .heroImg.slide{opacity:0;transition:opacity 1.8s ease;object-position:50% 55%}.heroImg.slide.on{opacity:1}
-.vbtn{position:absolute;right:max(5vw,18px);bottom:24px;z-index:2;width:44px;height:44px;border-radius:50%;border:0;background:rgba(0,0,0,.4);color:#fff;cursor:pointer}
-.hero>svg{position:absolute;inset:0;width:100%;height:100%}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,32,26,.5) 0%,rgba(20,32,26,0) 28%,rgba(20,32,26,.12) 50%,rgba(20,32,26,.88) 100%)}
-.heroText{position:relative;z-index:1;text-shadow:0 1px 14px rgba(10,18,14,.45);padding-bottom:clamp(44px,7vw,92px);width:100%}
-.hero .eyebrow{color:#f1e7d4}
-.hero h1{font-size:clamp(40px,5.4vw,78px);line-height:1.04;max-width:15ch;margin-bottom:.3em}
-.hero h1.name{font-size:clamp(56px,10vw,140px);max-width:9ch}
-.hero p.heroIntro{font-size:clamp(18px,1.6vw,21px);max-width:40ch;color:#efe8da;margin-bottom:26px}
-.facts{display:flex;flex-wrap:wrap;gap:clamp(20px,5vw,60px);margin-top:36px;padding-top:22px;border-top:1px solid rgba(255,255,255,.22);max-width:640px}
-.facts b{display:block;font-family:"DM Serif Display",Georgia,serif;font-weight:400;font-size:clamp(32px,3.4vw,42px);line-height:1}
-.facts span{font-size:14px;color:#e3ddd0}
+.vbtn{position:absolute;right:18px;bottom:18px;z-index:2;width:44px;height:44px;border-radius:50%;border:0;background:rgba(0,0,0,.4);color:#fff;cursor:pointer}
 
 /* about */
 .intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(28px,6vw,96px);align-items:start}
 .intro .lead{font-size:clamp(20px,2vw,24px);line-height:1.5}
 .intro .sig{font-family:"DM Serif Display",Georgia,serif;font-style:italic;font-size:26px;color:var(--terra-d)}
+.fam{width:100%;max-height:560px;object-fit:cover;object-position:50% 72%;border-radius:14px;margin:8px 0 16px;display:block}
 
-/* trips */
-.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px;margin-bottom:32px}
-.places{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px}
-.place{grid-column:span var(--span,3);position:relative;border-radius:14px;overflow:hidden;aspect-ratio:var(--ar,4/5);cursor:pointer;border:0;padding:0;text-align:left;color:#fff;background:var(--green-d);box-shadow:0 1px 2px rgba(0,0,0,.12);transition:box-shadow .3s,transform .3s}
-.place:hover{box-shadow:0 14px 32px rgba(0,0,0,.28);transform:translateY(-2px)}
-.place svg{position:absolute;inset:0;width:100%;height:100%;transition:transform .6s ease}
-.place:hover svg{transform:scale(1.04)}
-.place::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 42%,rgba(16,26,21,.86))}
-.place .cap{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:22px 74px 22px 22px}
-.place:nth-child(n+6) h3{font-size:clamp(22px,2vw,28px)}
-.place h3{margin:0;font-size:clamp(26px,2.6vw,36px)}
-.place .k{font-size:13px;letter-spacing:.04em;color:#e9e3d6}
-.place .ln{margin:6px 0 0;font-size:15px;line-height:1.45;color:#e9e3d6;max-width:46ch}
-.place:not(.wide) .ln{display:none}
-.place .go{position:absolute;right:20px;bottom:22px;z-index:1;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center;backdrop-filter:blur(4px);transition:background .25s}
-.place:hover .go{background:var(--terra-d)}
+/* trips: journal entries */
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px 40px;margin-bottom:clamp(40px,6vw,72px)}
+.facts{display:flex;flex-wrap:wrap;gap:clamp(18px,3vw,40px)}
+.facts b{display:block;font-family:"DM Serif Display",Georgia,serif;font-weight:400;font-size:clamp(30px,3vw,40px);line-height:1}
+.facts span{font-size:14px;color:var(--sage)}
+.journal{display:grid;gap:clamp(48px,7vw,96px)}
+.entry{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:center;text-decoration:none;color:inherit}
+.entry:nth-child(even) .ePic{order:2}
+.ePic{position:relative;display:block;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:var(--green-d);box-shadow:0 18px 40px rgba(0,0,0,.22)}
+.ePic img,.ePic svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.entry:hover .ePic img,.entry:hover .ePic svg{transform:scale(1.03)}
+.eText{display:block}
+.eText h3{font-size:clamp(36px,4vw,54px);margin:0 0 .15em}
+.eText .area{display:block;color:var(--sage);font-size:15px;margin-bottom:16px}
+.eText .ln{display:block;font-size:clamp(18px,1.5vw,20px);line-height:1.55;max-width:38ch}
+.eThumbs{display:flex;gap:8px;margin:22px 0 24px;align-items:center}
+.eThumbs img{width:64px;height:64px;object-fit:cover;border-radius:8px;display:block}
+.eCount{font-size:14px;color:var(--sage);margin-left:6px}
+.more{display:inline-flex;align-items:center;gap:10px;font-weight:700;border-bottom:1.5px solid var(--terra);padding-bottom:4px;transition:gap .25s}
+.entry:hover .more{gap:16px}
 
 /* map */
 .mapGrid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:center}
@@ -124,35 +125,28 @@ header.solid nav a:hover{color:var(--terra-d)}
 .mchip:hover{border-color:var(--char)}
 .mchip[aria-pressed=true]{background:var(--green);border-color:var(--green);color:var(--cream)}
 .mapCard{border-radius:16px;overflow:hidden;background:var(--cream);border:1px solid var(--rule)}
-.mapCard .pic{position:relative;aspect-ratio:16/10}.mapCard .pic svg{position:absolute;inset:0;width:100%;height:100%}
+.mapCard .pic{position:relative;aspect-ratio:16/10}.mapCard .pic img,.mapCard .pic svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .mapCard .body{padding:22px 24px 26px}
 .mapCard dl{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;font-size:15px;margin:10px 0 0}
 .mapCard dt{color:var(--soft)}.mapCard dd{margin:0}
 .mapCard .btn{margin-top:20px}
 
-/* photos */
-.place img,.mapCard .pic img,dialog .pic img,.heroImg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.place img{transition:transform .6s ease}.place:hover img{transform:scale(1.04)}
-.fam{width:100%;max-height:560px;object-fit:cover;object-position:50% 72%;border-radius:14px;margin:8px 0 16px;display:block}
+/* photos: magazine layout, grouped by trip, each photo keeps its shape */
+.gchips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 clamp(32px,4vw,48px)}
+.ggroup+.ggroup{margin-top:clamp(44px,5vw,64px)}
+.ghead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 24px;border-top:1px solid var(--rule);padding-top:18px;margin-bottom:20px}
+.ghead h3{font-size:clamp(28px,2.8vw,36px);margin:0 12px 0 0;display:inline}
+.glink{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;color:var(--terra-d);text-decoration:none}
+.glink:hover{gap:12px}
+.masonry{columns:3 240px;column-gap:16px}
+.masonry figure{break-inside:avoid;margin:0 0 18px}
+.masonry .tile{position:relative;width:100%;border-radius:10px;overflow:hidden}
+.masonry .tile img,.masonry .tile video{display:block;width:100%;height:auto;min-height:80px;background:#e7e2d4}
+.masonry .tile.art{aspect-ratio:4/3}.masonry .tile.art svg{position:absolute;inset:0;width:100%;height:100%}
+.masonry figcaption{font-size:14px;line-height:1.4;color:var(--soft);margin-top:7px}
 .tile{display:block;border:0;padding:0;margin:0;background:var(--green-d);color:inherit;cursor:zoom-in}
 .tile:focus-visible{outline-offset:-4px}
 .tile img{transition:transform .5s ease}.tile:hover img{transform:scale(1.03)}
-.dphotos{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-top:4px}
-.dphotos .tile{position:relative;width:100%;aspect-ratio:1;border-radius:10px;overflow:hidden}
-.dphotos .tile img,.dphotos .tile video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
-dialog .pic .tile{position:absolute;inset:0;width:100%;height:100%}
-.strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.strip figure{margin:0;position:relative;border-radius:12px;overflow:hidden;aspect-ratio:1}
-.strip figure:first-child{grid-column:span 2;grid-row:span 2}
-.strip img{object-position:50% 65%}
-.strip figure>svg,.strip img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.strip video,.strip iframe{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover;background:#000}
-.strip .tile{position:absolute;inset:0;width:100%;height:100%}
-.strip figure::after{content:"";position:absolute;inset:auto 0 0;height:50%;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.6));pointer-events:none}
-.strip figure:not(:has(figcaption))::after{display:none}
-.strip figcaption{position:absolute;left:14px;right:14px;bottom:12px;z-index:1;font-size:14px;line-height:1.35;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.5);pointer-events:none}
-.gchips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 22px}
-.gmore{margin-top:24px;text-align:center}
 .play{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
 .play span{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 4px 18px rgba(0,0,0,.3)}
 
@@ -164,42 +158,58 @@ dialog .pic .tile{position:absolute;inset:0;width:100%;height:100%}
 .list .done .tick{background:var(--terra);border-color:var(--terra);color:#fff}
 .list .done span{text-decoration:line-through;color:var(--sage)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-
-/* guestbook */
 .gb{background:var(--white)}
+
+/* trip page */
+.tCover{position:relative;height:min(78vh,760px);min-height:420px;background:var(--green-d);color:#fff;overflow:hidden}
+.tCover>.tile,.tCover>svg{position:absolute;inset:0;width:100%;height:100%}
+.tCover .tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tCover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,32,26,.35),rgba(20,32,26,0) 30%,rgba(20,32,26,.1) 55%,rgba(20,32,26,.85));pointer-events:none}
+.tCoverText{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;justify-content:space-between;padding-top:24px;padding-bottom:clamp(32px,5vw,64px);pointer-events:none;text-shadow:0 1px 14px rgba(10,18,14,.4)}
+.tCoverText a{pointer-events:auto}
+.tCover h1{font-size:clamp(52px,8vw,112px);line-height:1;margin:0 0 .12em}
+.tCover .eyebrow{color:#f1e7d4}
+.tCover .area{font-size:clamp(17px,1.5vw,20px);margin:0;color:#efe8da}
+.back{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;background:rgba(247,244,234,.92);color:var(--char);text-decoration:none;font-weight:700;font-size:15px;text-shadow:none}
+.back:hover{background:#fff}
+.tBody{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,320px);gap:clamp(32px,6vw,96px);align-items:start}
+.tStory .lead{font-family:"DM Serif Display",Georgia,serif;font-size:clamp(26px,2.6vw,34px);line-height:1.3;max-width:28ch;margin-bottom:.8em}
+.tStory .sh{font-size:clamp(26px,2.4vw,32px);margin:1.4em 0 .4em}
+.tStory p{font-size:18px}
+.coming{font-style:italic}
+.tFacts{position:sticky;top:92px;padding:24px;border-radius:16px;background:var(--white);border:1px solid var(--rule)}
+.tFacts dl{display:grid;grid-template-columns:1fr;gap:2px;margin:0 0 20px;font-size:15px}
+.tFacts dt{color:var(--soft);font-size:13px;margin-top:10px}.tFacts dt:first-child{margin-top:0}.tFacts dd{margin:0;font-weight:500}
+.review{margin-top:36px;padding:22px 24px 8px;background:var(--white);border-radius:14px;border:1px solid var(--rule)}
+.review h4{font:700 13px/1.4 "DM Sans",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-d);margin:0 0 12px}
+.review dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:0 0 12px;font-size:15px}
+.review dt{color:var(--soft)}.review dd{margin:0}
+.stars{color:var(--terra);letter-spacing:2px}.stars .off{color:var(--rule)}
+.tNavBand{padding:clamp(40px,5vw,64px) 0}
+.tNav{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.tnav{display:flex;gap:16px;align-items:center;text-decoration:none;padding:14px;border-radius:14px;border:1px solid var(--line);transition:background .2s}
+.tnav:hover{background:rgba(247,244,234,.08)}
+.tnav:last-child:not(:first-child){flex-direction:row-reverse;text-align:right}
+.tnPic{position:relative;flex:none;width:96px;aspect-ratio:1;border-radius:10px;overflow:hidden}
+.tnPic img,.tnPic svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tnav b{display:block;font-family:"DM Serif Display",Georgia,serif;font-weight:400;font-size:26px;line-height:1.1}
+.tnav small{color:var(--sage);font-size:14px}
+.tnav .eyebrow{margin-bottom:4px}
 
 /* footer */
 footer{background:var(--char);color:var(--cream);padding:56px 0 36px}
 footer .soft{color:var(--sage)}
-footer .brand svg{color:var(--terra)}
 .fgrid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(2,minmax(0,1fr));gap:32px}
 footer ul{list-style:none;padding:0;margin:0}footer li{margin:6px 0}footer li a{text-decoration:none;color:#d9d6cb}footer li a:hover{color:#fff}
 footer h4{margin:0 0 8px;font-size:15px}
 
-/* trip pop-up */
-dialog{border:0;padding:0;border-radius:18px;max-width:780px;width:calc(100% - 32px);background:var(--cream);color:var(--char);box-shadow:0 30px 80px rgba(0,0,0,.35)}
-dialog::backdrop{background:rgba(20,28,23,.72);backdrop-filter:blur(4px)}
-dialog .pic{position:relative;aspect-ratio:16/9}dialog .pic svg{position:absolute;inset:0;width:100%;height:100%}
-dialog .body{padding:26px 30px 32px}
-.close{position:absolute;top:12px;right:12px;z-index:2;width:44px;height:44px;border-radius:50%;border:0;background:rgba(0,0,0,.45);color:#fff;font-size:22px;cursor:pointer}
-.close:hover{background:rgba(0,0,0,.7)}
-dialog .dt{font-size:44px;margin-bottom:.2em}
-dialog h4{font:700 13px/1.4 "DM Sans",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-d);margin:30px 0 10px}
-dialog .meta{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;font-size:15px;margin:0}
-dialog .meta dt{color:var(--soft)}dialog .meta dd{margin:0}
-dialog .share{margin-top:18px}
-dialog .story{margin-top:18px}
-.review{margin-top:8px;padding:18px 20px 6px;background:var(--white);border-radius:12px;border:1px solid var(--rule)}
-.review h4{margin-top:0}
-.review dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:0 0 12px;font-size:15px}
-.review dt{color:var(--soft)}.review dd{margin:0}
-.stars{color:var(--terra);letter-spacing:2px}.stars .off{color:var(--rule);opacity:1}
-
 /* photo viewer */
-dialog.lb{max-width:none;max-height:none;width:100vw;height:100vh;height:100dvh;margin:0;border-radius:0;background:rgba(18,22,19,.97);color:var(--cream);box-shadow:none}
+dialog.lb{border:0;padding:0;max-width:none;max-height:none;width:100vw;height:100vh;height:100dvh;margin:0;background:rgba(18,22,19,.97);color:var(--cream)}
 dialog.lb[open]{display:grid;grid-template-rows:minmax(0,1fr) auto}
 dialog.lb::backdrop{background:rgba(18,22,19,.9)}
 dialog.lb .soft{color:var(--sage)}
+.close{position:absolute;top:12px;right:12px;z-index:2;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;font-size:22px;cursor:pointer}
+.close:hover{background:rgba(255,255,255,.25)}
 .lbStage{display:grid;place-items:center;padding:64px 72px 0;min-height:0}
 .lbStage img,.lbStage video{max-width:100%;max-height:calc(100vh - 150px);max-height:calc(100dvh - 150px);object-fit:contain;border-radius:6px;display:block}
 .lbStage iframe{width:min(100%,1100px);aspect-ratio:16/9;border:0;border-radius:6px}
@@ -208,9 +218,26 @@ dialog.lb .soft{color:var(--sage)}
 .lbNav:hover{background:rgba(255,255,255,.25)}
 .lbNav.prev{left:14px}.lbNav.next{right:14px}
 
-@media(max-width:900px){.intro,.mapGrid,.two,.fgrid{grid-template-columns:minmax(0,1fr)}.places{grid-template-columns:repeat(2,minmax(0,1fr))}.place,.place:nth-child(n){grid-column:span 1;aspect-ratio:4/5}.place:nth-child(1){grid-column:span 2;aspect-ratio:3/2}}
-@media(max-width:600px){.wide-only{display:none}nav a{padding:10px 8px}.place .ln{display:block}.brand span{display:none}.bar{flex-wrap:wrap;gap:0 12px;padding-block:6px}nav.scroll{order:3;width:100%;margin-left:-10px}.places{grid-template-columns:minmax(0,1fr)}.place,.place:nth-child(n){grid-column:span 1;aspect-ratio:4/3}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .lbStage{padding:60px 8px 0}.lbNav{top:auto;bottom:18px;transform:none;width:44px;height:44px}.lbCap{padding:16px 64px 22px}dialog .body{padding:22px 20px 28px}.dphotos{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}dialog .dt{font-size:36px}}
+@media(max-width:900px){
+  .hero{grid-template-columns:minmax(0,1fr);min-height:0}
+  .heroPhoto{order:-1;margin:0;border-radius:0;height:56vh;min-height:320px}
+  .heroCopy{padding:36px var(--pad) 48px}
+  .intro,.mapGrid,.two,.fgrid,.tBody{grid-template-columns:minmax(0,1fr)}
+  .entry,.entry:nth-child(even){grid-template-columns:minmax(0,1fr);gap:22px}
+  .entry:nth-child(even) .ePic{order:0}
+  .tFacts{position:static}
+}
+@media(max-width:600px){
+  .wide-only{display:none}nav a{padding:10px 8px}.brand span{display:none}
+  .bar{flex-wrap:wrap;gap:0 12px;padding-block:6px}nav.scroll{order:3;width:100%;margin-left:-10px}
+  html{scroll-padding-top:104px}
+  .recent3{gap:10px}.rTxt b{font-size:14px}
+  .masonry{columns:2;column-gap:10px}.masonry figure{margin-bottom:12px}.masonry figcaption{font-size:13px}
+  .tNav{grid-template-columns:minmax(0,1fr)}.tnav:last-child:not(:first-child){flex-direction:row;text-align:left}
+  .tnPic{width:72px}.tnav b{font-size:22px}
+  .tCover{height:68vh}
+  .lbStage{padding:60px 8px 0}.lbNav{top:auto;bottom:18px;transform:none;width:44px;height:44px}.lbCap{padding:16px 64px 22px}
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
@@ -222,23 +249,23 @@ dialog.lb .soft{color:var(--sage)}
   <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </svg>
 
-<header id="hdr">
+<header class="site" id="hdr">
   <div class="bar">
     <a class="brand" href="#top"><svg><use href="#mark"/></svg><span>The Obih Adventures</span></a>
     <nav class="scroll" aria-label="Main"><a href="#about">About<span class="wide-only"> us</span></a><a href="#places">Our trips</a><a href="#map">Map</a><a href="#photos">Photos</a><a href="#bucket">Bucket list</a><a href="#guestbook">Guestbook</a></nav>
   </div>
 </header>
 
-<main>
+<main id="home">
 <section class="hero" id="top">
-  <svg id="heroArt" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
-  <div class="heroText wrap">
+  <div class="heroCopy">
     <p class="eyebrow" id="heroEyebrow" hidden></p>
     <h1 id="heroTitle" class="name">The Obih Adventures</h1>
     <p class="heroIntro" id="heroLine"></p>
     <a class="btn" id="heroBtn" href="#places" hidden></a>
-    <div class="facts" id="facts"></div>
+    <div class="recentWrap" id="recentWrap"><p class="eyebrow">Our latest trips</p><div class="recent3" id="recent"></div></div>
   </div>
+  <div class="heroPhoto"><svg id="heroArt" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg></div>
 </section>
 
 <section class="band" id="about">
@@ -250,8 +277,9 @@ dialog.lb .soft{color:var(--sage)}
 
 <section class="band green" id="places">
   <div class="wrap">
-    <div class="head"><div><h2>Where we've been</h2><p class="soft" style="margin:0">Pick a place to see more.</p></div></div>
-    <div class="places" id="placeGrid"></div>
+    <div class="head"><div><h2>Where we've been</h2><p class="soft" style="margin:0">Pick a place to see more.</p></div><div class="facts" id="facts"></div></div>
+    <div class="journal" id="journal"></div>
+    <div class="gmore"><button class="btn ghost" id="jMore" hidden></button></div>
   </div>
 </section>
 
@@ -269,10 +297,9 @@ dialog.lb .soft{color:var(--sage)}
 
 <section class="band" id="photos">
   <div class="wrap">
-    <div class="head"><div><h2>Photos &amp; videos</h2><p class="soft" style="margin:0">A few favourites from each trip.</p></div></div>
+    <div class="head" style="margin-bottom:28px"><div><h2>Photos &amp; videos</h2><p class="soft" style="margin:0">A few favourites from each trip.</p></div></div>
     <div class="gchips" id="gChips" role="group" aria-label="Show photos from"></div>
-    <div class="strip" id="strip"></div>
-    <div class="gmore"><button class="btn ghost" id="gMore" hidden>Show all</button></div>
+    <div id="gallery"></div>
     <p class="soft small" id="galNote" hidden style="margin-top:14px">Paintings shown until our photos are added.</p>
   </div>
 </section>
@@ -294,6 +321,8 @@ dialog.lb .soft{color:var(--sage)}
 </section>
 </main>
 
+<main id="tripView" hidden></main>
+
 <footer>
   <div class="wrap fgrid">
     <div><a class="brand" href="#top"><svg><use href="#mark"/></svg>The Obih Adventures</a><p class="soft small" style="margin-top:12px">A family travel journal from Tucson, Arizona.</p></div>
@@ -301,8 +330,6 @@ dialog.lb .soft{color:var(--sage)}
     <div><h4>Say hi</h4><ul><li><a href="#bucket">Bucket list</a></li><li><a href="#guestbook">Guestbook</a></li><li><a href="#about">About us</a></li></ul></div>
   </div>
 </footer>
-
-<dialog id="dlg" aria-labelledby="dlgTitle"><button class="close" id="dlgClose" aria-label="Close">×</button><div id="dlgBody"></div></dialog>
 
 <dialog id="lb" class="lb" aria-label="Photo viewer">
   <button class="close" id="lbClose" aria-label="Close">×</button>
@@ -380,8 +407,7 @@ const openLB=(items,i)=>{lbItems=items;lbI=i;lbShow();try{lb.showModal()}catch(e
   try{history.pushState({lb:1},'');lbHist=true}catch(e){}};
 const step=d=>{if(lbItems.length<2)return;lbI=(lbI+d+lbItems.length)%lbItems.length;lbShow()};
 lb.addEventListener('close',()=>{$('#lbStage').innerHTML='';if(lbHist){lbHist=false;history.back()}});
-addEventListener('popstate',()=>{if(lb.open){lbHist=false;lb.close();return}
-  const id=fromHash();if(id){if(curTrip!==id){tripPushed=false;open(id,false)}}else if(dlg.open){tripPushed=false;dlg.close()}});
+addEventListener('popstate',()=>{if(lb.open){lbHist=false;lb.close();return}route()});
 $('#lbClose').addEventListener('click',()=>lb.close());
 lb.querySelector('.prev').addEventListener('click',()=>step(-1));lb.querySelector('.next').addEventListener('click',()=>step(1));
 lb.addEventListener('keydown',e=>{if(e.target.tagName==='VIDEO')return;if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1)});
@@ -401,94 +427,92 @@ const review=r=>{if(!r||typeof r!=='object')return '';
 const tripMedia=p=>{const seen=new Set(),out=[];const add=g=>{const k=g.photo||g.video||g.youtube;if(k&&!seen.has(k)){seen.add(k);out.push(g)}};
   [p.photo,...(p.photos||[])].filter(Boolean).forEach(src=>add({photo:src,caption:capOf[src]||''}));
   S.gallery.forEach(g=>{if(tripOf(g)===p.id)add(g)});return out};
+
 document.title=S.title;
+try{history.scrollRestoration='manual'}catch(e){}
+const ARROW='<svg width="18" height="18" aria-hidden="true"><use href="#arrow"/></svg>';
+const slug=p=>'trip-'+p.name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+const byId=id=>places.find(x=>x.id===id);
+const fromHash=()=>{let h='';try{h=decodeURIComponent(location.hash.slice(1))}catch(e){}const p=places.find(x=>slug(x)===h);return p?p.id:null};
+/* newest trip first, read from the 'when' wording (month + year); trips without a date go last */
+const MON={jan:1,feb:2,mar:3,apr:4,may:5,jun:6,jul:7,aug:8,sep:9,oct:10,nov:11,dec:12};
+const dateVal=t=>{const s=String(t||'').toLowerCase(),y=/(19|20)\d\d/.exec(s);if(!y)return -1;const m=/(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/.exec(s);return +y[0]*12+(m?MON[m[1]]:0)};
+const order=places.map((p,i)=>({p,i,v:dateVal(p.when)})).sort((a,b)=>(b.v-a.v)||(a.i-b.i)).map(x=>x.p);
+const mediaOf={};places.forEach(p=>{mediaOf[p.id]=tripMedia(p)});
+
+/* opening words */
 {const head=String(S.headline||'').trim(),line=String(S.intro||S.tagline||'').trim(),btn=String(S.button||'').trim();
  $('#heroTitle').textContent=head||S.title;$('#heroTitle').classList.toggle('name',!head);
  $('#heroEyebrow').textContent=S.title;$('#heroEyebrow').hidden=!head;
  $('#heroLine').textContent=line;$('#heroLine').hidden=!line;
- $('#heroBtn').innerHTML=`${esc(btn)} <svg width="18" height="18"><use href="#arrow"/></svg>`;$('#heroBtn').hidden=!btn}
+ $('#heroBtn').innerHTML=`${esc(btn)} ${ARROW}`;$('#heroBtn').hidden=!btn}
+$('#recent').innerHTML=order.filter(p=>has(p.when)).slice(0,3).map(p=>`<a class="recent" href="#${slug(p)}"><span class="rPic">${pic(p,'r'+p.id,true)}</span><span class="rTxt"><b>${esc(p.name)}</b><small>${esc(p.when)}</small></span></a>`).join('');
+$('#recentWrap').hidden=!$('#recent').innerHTML;
 $('#aboutText').innerHTML=S.about.map((t,i)=>`<p class="${i?'soft':'lead'}">${esc(t)}</p>`).join('')+(S.familyPhoto?`<img class="fam" src="${esc(S.familyPhoto)}" alt="The Obih family">`:'')+'<div class="sig">The Obih family</div>';
 
-/* hero art: big canyon at golden hour */
+/* painted fallback for the opening photo */
 {let s=sky('hs','#b9482a','#eb8f4f','#fbd29a')+`</defs>`;s=`<defs>${s}<rect width="1600" height="900" fill="url(#hs)"/><circle cx="1150" cy="300" r="90" fill="#fff0cf"/><circle cx="1150" cy="300" r="160" fill="#fff0cf" opacity=".18"/>`;
  [[420,'#d98a5e',90],[480,'#c26a3f',70],[545,'#a9502c',60],[610,'#8a3b22',50],[690,'#62291a',40]].forEach(([y,f,a],i)=>{let d=`M0 900 L0 ${y}`;for(let x=0;x<=1600;x+=80){const st=((x/80+i*2)%5===0)?-a:((x/80+i)%3===0?-a*.4:0);d+=` L${x} ${y+st} L${x+46} ${y+st}`}s+=`<path d="${d} L1600 900Z" fill="${f}"/>`});
  s+=pines(900,10,190,'#24170f',1,1600)+`<g color="#24170f"><use href="#saguaro" x="1360" y="560" width="120" height="300"/><use href="#saguaro" x="1270" y="700" width="60" height="150"/></g>`;
  $('#heroArt').innerHTML=s}
 
-/* facts */
+/* opening photo / video */
+{const box=$('.heroPhoto'),heroPics=[...(S.heroPhotos||[]),S.heroPhoto].filter(Boolean),still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ if(heroPics.length){box.insertAdjacentHTML('beforeend',heroPics.map((src,i)=>`<img class="heroImg slide${i?'':' on'}" src="${esc(src)}" alt="">`).join(''));
+  if(heroPics.length>1&&!S.heroVideo&&!still){const sl=[...box.querySelectorAll('.heroImg')];let k=0;setInterval(()=>{sl[k].classList.remove('on');k=(k+1)%sl.length;sl[k].classList.add('on')},6000)}}
+ if(S.heroVideo){const v=document.createElement('video');Object.assign(v,{src:S.heroVideo,muted:true,loop:true,playsInline:true,autoplay:!still});if(heroPics[0])v.poster=heroPics[0];v.setAttribute('aria-hidden','true');box.append(v);
+  const b=document.createElement('button');b.className='vbtn';b.setAttribute('aria-label','Pause video');b.textContent='❚❚';b.onclick=()=>{if(v.paused){v.play();b.textContent='❚❚';b.setAttribute('aria-label','Pause video')}else{v.pause();b.textContent='►';b.setAttribute('aria-label','Play video')}};box.append(b)}}
+
+/* counts */
 const nk=k=>places.filter(p=>p.kind===k).length;
 $('#facts').innerHTML=[[places.length,'places'],[nk('mountains'),'mountains & canyons'],[nk('lakes'),'lakes & state parks'],[nk('parks'),nk('parks')===1?'national park':'national parks']].filter(x=>x[0]).map(([n,l])=>`<div><b>${n}</b><span>${l}</span></div>`).join('');
 
-/* places grid */
-const spanFor=(i,n)=>{if(n<=2||i<2)return n===1?12:6;const r=n-2,extra=r%4,j=i-2;if(extra===3&&j<3)return 4;if(extra===2&&j<2)return 6;if(extra===1&&j<1)return 12;return 3};
-const AR={12:'3/1',6:'3/2',4:'4/3',3:'4/5'};
-$('#placeGrid').innerHTML=places.map((p,i)=>{const sp=spanFor(i,places.length);return `<button class="place${sp>=6?' wide':''}" style="--span:${sp};--ar:${AR[sp]}" data-id="${p.id}" aria-label="${esc(p.name)}, ${KIND[p.kind]}${has(p.when)?', '+esc(p.when):''}">${pic(p,'g'+i,sp<6)}<div class="cap"><div class="k">${KIND[p.kind]}${has(p.when)?' · '+esc(p.when):''}</div><h3>${esc(p.name)}</h3>${p.line?`<p class="ln">${esc(p.line)}</p>`:''}</div><span class="go"><svg width="20" height="20"><use href="#arrow"/></svg></span></button>`}).join('');
-const dlg=$('#dlg');
-const slug=p=>'trip-'+p.name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
-const fromHash=()=>{const h=decodeURIComponent(location.hash.slice(1));const p=places.find(x=>slug(x)===h);return p?p.id:null};
-let tripPushed=false,curTrip=null;
-const open=(id,push=true)=>{const p=places.find(x=>x.id===id),i=places.indexOf(p);if(!p)return;curTrip=id;
-  if(push){try{history.pushState({trip:id},'','#'+slug(p));tripPushed=true}catch(e){}}
-  const media=tripMedia(p),st=p.photo?1:0,story=(has(p.story)?paras(p.story):'')+SECT.filter(([k])=>has(p[k])).map(([k,h])=>`<h4>${h}</h4>${paras(p[k])}`).join('');
-  $('#dlgBody').innerHTML=`<div class="pic">${p.photo?`<button class="tile" data-m="0" aria-label="Enlarge photo of ${esc(p.name)}">${pic(p,'d'+i)}</button>`:pic(p,'d'+i)}</div><div class="body">
-    <div class="soft small">${KIND[p.kind]}</div><h3 id="dlgTitle" class="dt">${esc(p.name)}</h3><p>${esc(p.line)}</p>
-    <dl class="meta"><dt>Where</dt><dd>${esc(p.area)}</dd>${has(p.when)?`<dt>When</dt><dd>${esc(p.when)}</dd>`:''}</dl>
-    <button class="btn ghost sm share" id="shareTrip">Share this trip</button>
-    <div class="story">${story||'<p class="soft small">Our story from here is coming soon.</p>'}</div>
-    ${media.length>st?`<h4>Photos &amp; videos</h4><div class="dphotos">${media.slice(st).map((g,k)=>`<button class="tile" data-m="${k+st}" aria-label="${tileLabel(g)}">${thumb(g,g.caption||'Photo from '+p.name)}</button>`).join('')}</div>`:''}
-    ${review(p.review)}</div>`;
-  $('#dlgBody').onclick=e=>{const b=e.target.closest('[data-m]');if(b)openLB(media,+b.dataset.m)};
-  $('#shareTrip').onclick=async e=>{const url=location.origin+location.pathname+'#'+slug(p),btn=e.currentTarget;
-    if(navigator.share){try{await navigator.share({title:p.name+' · '+S.title,url})}catch(err){}return}
-    try{await navigator.clipboard.writeText(url);btn.textContent='Link copied'}catch(err){btn.textContent=url}
-    setTimeout(()=>{btn.textContent='Share this trip'},2500)};
-  try{dlg.showModal()}catch(e){dlg.setAttribute('open','')}};
-$('#placeGrid').addEventListener('click',e=>{const b=e.target.closest('[data-id]');if(b)open(b.dataset.id)});
-dlg.addEventListener('close',()=>{curTrip=null;if(tripPushed){tripPushed=false;history.back()}else if(fromHash()){try{history.replaceState(null,'',location.pathname+location.search)}catch(e){}}});
-$('#dlgClose').addEventListener('click',()=>dlg.close());
-dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+/* trips as journal entries, newest first */
+const JMAX=5;let jOpen=false;
+const entry=(p,k)=>{const m=mediaOf[p.id],th=m.filter(g=>g.photo&&g.photo!==p.photo).slice(0,3),rest=m.length-(p.photo?1:0)-th.length;
+  return `<a class="entry" href="#${slug(p)}"><span class="ePic">${pic(p,'j'+k,false)}</span><span class="eText"><span class="eyebrow">${esc(KIND[p.kind])}${has(p.when)?' · '+esc(p.when):''}</span><h3>${esc(p.name)}</h3><span class="area">${esc(p.area)}</span>${p.line?`<span class="ln">${esc(p.line)}</span>`:''}${th.length?`<span class="eThumbs">${th.map(g=>im(g.photo,'',true)).join('')}${rest>0?`<span class="eCount">+${rest} more</span>`:''}</span>`:''}<span class="more">Read our story ${ARROW}</span></span></a>`};
+const renderJ=()=>{$('#journal').innerHTML=(jOpen?order:order.slice(0,JMAX)).map(entry).join('');
+  const b=$('#jMore');b.hidden=jOpen||order.length<=JMAX;b.textContent=`See all ${order.length} trips`};
+$('#jMore').addEventListener('click',()=>{jOpen=true;renderJ();$('#journal').children[JMAX]?.focus()});
+renderJ();
 
 /* map */
 const AZ=[[-114.82,32.49],[-111.07,31.33],[-109.05,31.33],[-109.05,37],[-114.05,37],[-114.05,36.2],[-114.75,35.1],[-114.63,34.3],[-114.43,34],[-114.72,33.4],[-114.72,32.72]];
 const P=([lon,lat])=>[((lon+115.3)*166).toFixed(0),((37.4-lat)*165+20).toFixed(0)];
 const Q=([lon,lat])=>[(1090+(lon+111.25)*562).toFixed(0),(570+(32.6-lat)*416).toFixed(0)];
-let sel=places[0]?.id;
+let sel=order[0]?.id;
 const svg=$('#mapSvg');
-const pin=(p,[x,y],lab)=>{const[dx,dy,an]=p.lab;return `<g class="pin${p.id===sel?' on':''}" tabindex="0" role="button" aria-label="${p.name}" data-id="${p.id}" transform="translate(${x} ${y})"><circle class="halo" r="${lab?34:20}"/><circle class="dot" r="${lab?12:7}"/>${lab?`<text x="${dx}" y="${dy}" text-anchor="${an}">${p.name}</text>`:''}</g>`};
+const pin=(p,[x,y],lab)=>{const[dx,dy,an]=p.lab;return `<g class="pin${p.id===sel?' on':''}" tabindex="0" role="button" aria-label="${esc(p.name)}" data-id="${p.id}" transform="translate(${x} ${y})"><circle class="halo" r="${lab?34:20}"/><circle class="dot" r="${lab?12:7}"/>${lab?`<text x="${dx}" y="${dy}" text-anchor="${an}">${esc(p.name)}</text>`:''}</g>`};
 const drawMap=()=>{if(!places.length)return;const h=P([-110.97,32.22]),hq=Q([-110.97,32.22]),a=P([-111.25,32.6]),b=P([-110.45,31.35]);
   svg.innerHTML=`<path class="az" d="M${AZ.map(p=>P(p).join(' ')).join(' L')}Z"/>`+
   `<rect x="${a[0]}" y="${a[1]}" width="${b[0]-a[0]}" height="${b[1]-a[1]}" class="box"/><path d="M${b[0]} ${a[1]} L1090 570" class="lead"/>`+
   `<rect x="1090" y="530" width="450" height="570" rx="14" class="inset"/><text x="1112" y="566" class="insetT">Around Tucson</text>`+
   `<g class="pin home"><circle class="dot" r="5" cx="${h[0]}" cy="${h[1]}"/></g><g class="pin home" transform="translate(${hq[0]} ${hq[1]})"><circle class="dot" r="9"/><text x="-16" y="7" text-anchor="end">Home</text></g>`+
   places.map(p=>p.near?pin(p,P([p.lon,p.lat]),0)+pin(p,Q([p.lon,p.lat]),1):pin(p,P([p.lon,p.lat]),1)).join('');
-  const p=places.find(x=>x.id===sel),i=places.indexOf(p);
-  $('#mapCard').innerHTML=`<div class="pic">${pic(p,'m'+i)}</div><div class="body"><div class="soft small">${KIND[p.kind]}</div><h3 style="font-size:36px;margin:2px 0 6px">${p.name}</h3><p style="margin:0">${esc(p.line)}</p><dl><dt>Where</dt><dd>${esc(p.area)}</dd>${has(p.when)?`<dt>When</dt><dd>${esc(p.when)}</dd>`:''}</dl><button class="btn" data-open="${p.id}">See this trip <svg width="18" height="18"><use href="#arrow"/></svg></button></div>`;
-  $('#mapChips').innerHTML=places.map(x=>`<button class="mchip" data-id="${x.id}" aria-pressed="${x.id===sel}">${x.name}</button>`).join('')};
+  const p=byId(sel),i=places.indexOf(p);
+  $('#mapCard').innerHTML=`<div class="pic">${pic(p,'m'+i,false)}</div><div class="body"><div class="soft small">${KIND[p.kind]}</div><h3 style="font-size:36px;margin:2px 0 6px">${esc(p.name)}</h3><p style="margin:0">${esc(p.line)}</p><dl><dt>Where</dt><dd>${esc(p.area)}</dd>${has(p.when)?`<dt>When</dt><dd>${esc(p.when)}</dd>`:''}</dl><a class="btn" href="#${slug(p)}">See this trip ${ARROW}</a></div>`;
+  $('#mapChips').innerHTML=places.map(x=>`<button class="mchip" data-id="${x.id}" aria-pressed="${x.id===sel}">${esc(x.name)}</button>`).join('')};
 const pick=e=>{const g=e.target.closest('[data-id]');if(g){sel=g.dataset.id;drawMap()}};
 svg.addEventListener('click',pick);$('#mapChips').addEventListener('click',pick);
-$('#mapCard').addEventListener('click',e=>{const b=e.target.closest('[data-open]');if(b)open(b.dataset.open)});
 svg.addEventListener('keydown',e=>{const g=e.target.closest('[data-id]');if(g&&(e.key==='Enter'||e.key===' ')){e.preventDefault();sel=g.dataset.id;drawMap();svg.querySelector(`[data-id="${sel}"]`).focus()}});
 drawMap();
 
-/* photos & videos */
-const strip=$('#strip');
-const gTrips=places.filter(p=>S.gallery.some(g=>tripOf(g)===p.id)),GMAX=12;
-let gSel='all',gOpen=false,gList=[];
-const renderGal=()=>{gList=gSel==='all'?S.gallery:S.gallery.filter(g=>tripOf(g)===gSel);
-  const show=gSel==='all'&&!gOpen?gList.slice(0,GMAX):gList;
-  strip.innerHTML=show.map((g,k)=>`<figure><button class="tile" data-g="${k}" aria-label="${tileLabel(g)}">${thumb(g)}</button>${g.caption?`<figcaption>${esc(g.caption)}</figcaption>`:''}</figure>`).join('');
-  const more=$('#gMore');more.hidden=show.length>=gList.length;more.textContent=`Show all ${gList.length}`;
+/* photos & videos: grouped by trip, newest trip first; each photo keeps its own shape */
+const galOf={};S.gallery.forEach(g=>{const t=tripOf(g)||'more';(galOf[t]=galOf[t]||[]).push(g)});
+const gTrips=order.filter(p=>galOf[p.id]),GPER=3;let gSel='all';
+const fig=(g,attrs)=>`<figure><button class="tile" ${attrs} aria-label="${tileLabel(g)}">${thumb(g)}</button>${g.caption?`<figcaption>${esc(g.caption)}</figcaption>`:''}</figure>`;
+const group=(p,all)=>{const t=p?p.id:'more',list=galOf[t],show=all?list:list.slice(0,GPER),n=p?mediaOf[p.id].length:list.length;
+  return `<section class="ggroup"><div class="ghead"><div><h3>${p?esc(p.name):'More photos'}</h3>${p&&has(p.when)?`<span class="soft small">${esc(p.when)}</span>`:''}</div>${p?`<a class="glink" href="#${slug(p)}">All ${n} photos &amp; videos ${ARROW}</a>`:''}</div><div class="masonry">${show.map((g,k)=>fig(g,`data-t="${t}" data-k="${k}"`)).join('')}</div></section>`};
+const renderGal=()=>{$('#gallery').innerHTML=gSel==='all'?gTrips.map(p=>group(p,false)).join('')+(galOf.more?group(null,true):''):group(byId(gSel),true);
   $('#gChips').querySelectorAll('[data-t]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.t===gSel))};
 if(S.gallery.length){
-  $('#gChips').innerHTML=[['all','All'],...gTrips.map(p=>[p.id,p.name])].map(([t,n])=>`<button class="mchip" data-t="${t}" aria-pressed="false">${esc(n)}</button>`).join('');
+  $('#gChips').innerHTML=[['all','All trips'],...gTrips.map(p=>[p.id,p.name])].map(([t,n])=>`<button class="mchip" data-t="${t}" aria-pressed="false">${esc(n)}</button>`).join('');
   $('#gChips').addEventListener('click',e=>{const b=e.target.closest('[data-t]');if(b){gSel=b.dataset.t;renderGal()}});
-  $('#gMore').addEventListener('click',()=>{gOpen=true;renderGal();strip.querySelectorAll('.tile')[GMAX]?.focus()});
-  strip.addEventListener('click',e=>{const b=e.target.closest('[data-g]');if(b)openLB(gList,+b.dataset.g)});
+  $('#gallery').addEventListener('click',e=>{const b=e.target.closest('.tile[data-t]');if(b)openLB(galOf[b.dataset.t],+b.dataset.k)});
   renderGal();
 }else{
-  $('#gChips').hidden=true;
-  strip.innerHTML=places.slice(0,5).map((p,i)=>`<figure>${pic(p,'p'+i)}<figcaption>${esc(p.name)}</figcaption></figure>`).join('');
-  $('#galNote').hidden=false;
+  $('#gChips').hidden=true;$('#galNote').hidden=false;
+  $('#gallery').innerHTML=`<div class="masonry">${places.slice(0,6).map((p,i)=>`<figure><div class="tile art">${pic(p,'p'+i)}</div><figcaption>${esc(p.name)}</figcaption></figure>`).join('')}</div>`;
 }
 
 /* bucket list */
@@ -497,19 +521,37 @@ $('#bList').innerHTML=S.bucketList.length?S.bucketList.map(b=>`<li class="${b.do
 /* guestbook */
 if(S.guestbookLink){$('#gbLink').href=S.guestbookLink}else{$('#guestbook').remove();document.querySelectorAll('a[href="#guestbook"]').forEach(a=>a.closest('li')?a.closest('li').remove():a.remove())}
 
-
-/* opening photo / video */
-const heroPics=[...(S.heroPhotos||[]),S.heroPhoto].filter(Boolean);
-if(heroPics.length){$('#heroArt').insertAdjacentHTML('afterend',heroPics.map((src,i)=>`<img class="heroImg slide${i?'':' on'}" src="${esc(src)}" alt="">`).join(''));
- if(heroPics.length>1&&!S.heroVideo&&!matchMedia('(prefers-reduced-motion: reduce)').matches){const sl=[...document.querySelectorAll('.heroImg.slide')];let k=0;setInterval(()=>{sl[k].classList.remove('on');k=(k+1)%sl.length;sl[k].classList.add('on')},6000)}}
-if(S.heroVideo){const hero=$('#top'),v=document.createElement('video');Object.assign(v,{src:S.heroVideo,muted:true,loop:true,playsInline:true,autoplay:!matchMedia('(prefers-reduced-motion: reduce)').matches});if(heroPics[0])v.poster=heroPics[0];v.setAttribute('aria-hidden','true');v.addEventListener('loadedmetadata',()=>{if(v.videoHeight>v.videoWidth)hero.classList.add('tall')});(hero.querySelector('.heroImg')||$('#heroArt')).after(v);
- const b=document.createElement('button');b.className='vbtn';b.setAttribute('aria-label','Pause video');b.textContent='❚❚';b.onclick=()=>{if(v.paused){v.play();b.textContent='❚❚';b.setAttribute('aria-label','Pause video')}else{v.pause();b.textContent='►';b.setAttribute('aria-label','Play video')}};hero.append(b)}
-
-/* a shared trip link opens that trip */
-if(fromHash())open(fromHash(),false);
-
-/* header turns solid after the hero */
-const hdr=$('#hdr');const onScroll=()=>hdr.classList.toggle('solid',scrollY>120);addEventListener('scroll',onScroll,{passive:true});onScroll();
+/* trip pages: #trip-mount-lemmon etc. */
+const home=$('#home'),tv=$('#tripView');
+const tnav=(q,lab)=>q?`<a class="tnav" href="#${slug(q)}"><span class="tnPic">${pic(q,'n'+q.id,true)}</span><span><span class="eyebrow">${lab}</span><b>${esc(q.name)}</b>${has(q.when)?`<small>${esc(q.when)}</small>`:''}</span></a>`:'<span></span>';
+const renderTrip=id=>{const p=byId(id),i=order.indexOf(p),m=mediaOf[id],st=p.photo?1:0;
+  const story=(has(p.story)?paras(p.story):'')+SECT.filter(([k])=>has(p[k])).map(([k,h])=>`<h2 class="sh">${h}</h2>${paras(p[k])}`).join('');
+  tv.innerHTML=`<article>
+  <div class="tCover">${p.photo?`<button class="tile" data-m="0" aria-label="Enlarge photo of ${esc(p.name)}">${pic(p,'tc',false)}</button>`:pic(p,'tc')}
+    <div class="tCoverText wrap"><a class="back" href="#places">← All our trips</a><div><span class="eyebrow">${esc(KIND[p.kind])}${has(p.when)?' · '+esc(p.when):''}</span><h1>${esc(p.name)}</h1><p class="area">${esc(p.area)}</p></div></div></div>
+  <section class="band"><div class="wrap tBody">
+    <div class="tStory">${p.line?`<p class="lead">${esc(p.line)}</p>`:''}${story||'<p class="soft coming">Our story from here is coming soon.</p>'}${review(p.review)}</div>
+    <aside class="tFacts"><dl><dt>Where</dt><dd>${esc(p.area)}</dd>${has(p.when)?`<dt>When</dt><dd>${esc(p.when)}</dd>`:''}<dt>Type of trip</dt><dd>${esc(KIND[p.kind])}</dd><dt>Photos &amp; videos</dt><dd>${m.length}</dd></dl><button class="btn ghost sm" id="shareTrip">Share this trip</button></aside>
+  </div></section>
+  ${m.length>st?`<section class="band white"><div class="wrap"><h2>Photos &amp; videos</h2><div class="masonry">${m.slice(st).map((g,k)=>fig(g,`data-m="${k+st}"`)).join('')}</div></div></section>`:''}
+  <section class="band green tNavBand"><div class="wrap tNav">${tnav(order[i-1],'Previous trip')}${tnav(order[i+1],'Next trip')}</div></section>
+  </article>`;
+  tv.onclick=e=>{const b=e.target.closest('[data-m]');if(b)openLB(m,+b.dataset.m)};
+  $('#shareTrip').onclick=async e=>{const url=location.origin+location.pathname+'#'+slug(p),btn=e.currentTarget;
+    if(navigator.share){try{await navigator.share({title:p.name+' · '+S.title,url});return}catch(err){if(err&&err.name==='AbortError')return}}
+    try{await navigator.clipboard.writeText(url);btn.textContent='Link copied'}catch(err){btn.textContent=url}
+    setTimeout(()=>{btn.textContent='Share this trip'},2500)}};
+let view='home',homeY=0;
+const jump=y=>{try{scrollTo({top:y,behavior:'instant'})}catch(e){scrollTo(0,y)}};
+const route=()=>{const id=fromHash();
+  if(id){if(view===id)return;if(view==='home')homeY=scrollY;renderTrip(id);home.hidden=true;tv.hidden=false;view=id;
+    document.title=byId(id).name+' · '+S.title;jump(0);return}
+  if(view==='home')return;
+  tv.hidden=true;tv.innerHTML='';home.hidden=false;view='home';document.title=S.title;
+  let t=null;try{t=location.hash.length>1&&document.getElementById(decodeURIComponent(location.hash.slice(1)))}catch(e){}
+  if(t)t.scrollIntoView({behavior:'instant'});else jump(homeY)};
+addEventListener('hashchange',route);
+route();
 }
 </script>
 </body>
