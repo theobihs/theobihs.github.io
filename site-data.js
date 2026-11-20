@@ -79,7 +79,8 @@ window.SITE = {
       photos: ['photos/havasu-shore-walk.jpg', 'photos/havasu-beach-pjs.jpg', 'photos/havasu-sunset-buoys.jpg', 'photos/havasu-cabin.jpg', 'photos/havasu-boat-dad.jpg', 'photos/havasu-canyon-cove.jpg', 'photos/havasu-phone-booth.jpg'] },
     { name: 'Alamo Lake', kind: 'lakes', area: 'Alamo Lake State Park, near Wenden',
       line: 'A cabin stay on quiet water, far from everything.', lat: 34.23, lon: -113.58,
-      photo: '', story: '' },
+      photo: 'photos/alamo-chairs.jpg', story: '',
+      photos: ['photos/alamo-family-view.jpg', 'photos/alamo-sunset-joy.jpg', 'photos/alamo-cabin-porch-2.jpg', 'photos/alamo-reflection.jpg', 'photos/alamo-shoulders.jpg', 'photos/alamo-road-pose.jpg', 'photos/alamo-road-mom.jpg', 'photos/alamo-road-dad.jpg', 'photos/alamo-sunset-family.jpg', 'photos/alamo-cabin-porch.jpg', 'photos/alamo-dawn.jpg'] },
     { name: 'Roper Lake', kind: 'lakes', area: 'Roper Lake State Park, near Safford',
       line: 'A lakeside cabin stay under Mount Graham.', lat: 32.76, lon: -109.70,
       photo: 'photos/roper-lake-overlook.jpg', story: '',
@@ -96,6 +97,12 @@ window.SITE = {
        { youtube: 'dQw4w9WgXcQ', caption: 'Grand Canyon day' },   (the code after v= in a YouTube link)
      While this list is empty, the site shows the paintings instead. */
   gallery: [
+    { photo: 'photos/alamo-chairs.jpg', caption: 'Three chairs by the water, Alamo Lake' },
+    { photo: 'photos/alamo-sunset-joy.jpg', caption: 'Sunset silliness at Alamo Lake' },
+    { photo: 'photos/alamo-reflection.jpg', caption: 'Clouds on still water' },
+    { video: 'videos/alamo-view.mp4', caption: 'The view over the Alamo Lake cabins' },
+    { photo: 'photos/alamo-dawn.jpg', caption: 'Pink dawn over Alamo Lake' },
+    { photo: 'photos/alamo-cabin-porch-2.jpg', caption: 'Our Burro Bungalow' },
     { photo: 'photos/havasu-sunset-chairs.jpg', caption: 'Front-row seats to a Lake Havasu sunset' },
     { photo: 'photos/havasu-shore-walk.jpg', caption: 'An evening walk along the water' },
     { photo: 'photos/havasu-canyon-cove.jpg', caption: 'Boat ride through the canyon, Lake Havasu' },
