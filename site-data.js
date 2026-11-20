@@ -69,9 +69,10 @@ window.SITE = {
       line: 'Summer in the cool ponderosa pines.', lat: 34.14, lon: -109.96,
       photo: 'photos/pinetop-family-pines.jpg', story: '',
       photos: ['photos/pinetop-bridge-family.jpg', 'photos/pinetop-pattycake.jpg', 'photos/pinetop-shoulders.jpg', 'photos/pinetop-lake-explorer.jpg', 'photos/pinetop-dock.jpg', 'photos/pinetop-blanket.jpg', 'photos/pinetop-shoulders-side.jpg', 'photos/pinetop-silly-face.jpg', 'photos/pinetop-lake-geese.jpg', 'photos/pinetop-tall-pines.jpg', 'photos/pinetop-lake-clouds.jpg', 'photos/pinetop-meadow-sky.jpg', 'photos/family-picnic-2.jpg', 'photos/family-picnic-1.jpg'] },
-    { name: 'Lost Dutchman', kind: 'lakes', area: 'Lost Dutchman State Park, Superstition Mountains',
-      line: 'A cabin stay at the foot of the Superstitions.', lat: 33.46, lon: -111.48,
-      photo: '', story: '' },
+    { name: 'Dead Horse Ranch', kind: 'lakes', area: 'Dead Horse Ranch State Park, Cottonwood',
+      line: 'A cabin stay by the Verde River, with cottonwoods, pines and creek splashing.', lat: 34.76, lon: -112.02,
+      photo: 'photos/deadhorse-cabin-family.jpg', story: '',
+      photos: ['photos/deadhorse-creek-splash.jpg', 'photos/deadhorse-river-carry.jpg', 'photos/deadhorse-river-log.jpg', 'photos/deadhorse-cottonwoods.jpg', 'photos/deadhorse-pines-pose.jpg', 'photos/deadhorse-pines-seated.jpg', 'photos/deadhorse-trail-sign.jpg', 'photos/deadhorse-cabin-family-2.jpg'] },
     { name: 'Lake Havasu', kind: 'lakes', area: 'Lake Havasu State Park, Lake Havasu City',
       line: 'A cabin stay on the Colorado River.', lat: 34.50, lon: -114.36,
       photo: '', story: '' },
@@ -94,6 +95,11 @@ window.SITE = {
        { youtube: 'dQw4w9WgXcQ', caption: 'Grand Canyon day' },   (the code after v= in a YouTube link)
      While this list is empty, the site shows the paintings instead. */
   gallery: [
+    { photo: 'photos/deadhorse-cabin-family.jpg', caption: 'Our cabin at Dead Horse Ranch' },
+    { video: 'videos/deadhorse-creek.mp4', caption: 'Splashing in the creek at Dead Horse Ranch' },
+    { photo: 'photos/deadhorse-river-carry.jpg', caption: 'Crossing the Verde River' },
+    { photo: 'photos/deadhorse-river-log.jpg', caption: 'Quiet moment by the Verde River' },
+    { video: 'videos/deadhorse-pines.mp4', caption: 'Through the pines at Dead Horse Ranch' },
     { photo: 'photos/gc-rim-view.jpg', caption: 'Taking in the Grand Canyon' },
     { photo: 'photos/gc-sunset-family.jpg', caption: 'Sunset near the Grand Canyon' },
     { photo: 'photos/gc-rim-pose.jpg', caption: 'On the rim' },
@@ -135,6 +141,7 @@ window.SITE = {
   /* ---------- BUCKET LIST ----------
      Change done: false to done: true when you've been. */
   bucketList: [
+    { name: 'Lost Dutchman State Park', done: false },
   ],
 
   /* ---------- GUESTBOOK ----------
