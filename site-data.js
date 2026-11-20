@@ -62,7 +62,8 @@ window.SITE = {
       photos: ['photos/madera-trail-kids.jpg', 'photos/madera-bridge-kids.jpg', 'photos/madera-creek.jpg', 'photos/madera-laughing.jpg', 'photos/madera-hair-flip.jpg'] },
     { name: 'Pinetop', kind: 'mountains', area: 'White Mountains, northeastern Arizona',
       line: 'Summer in the cool ponderosa pines.', lat: 34.14, lon: -109.96,
-      photo: 'photos/family-picnic-2.jpg', story: '' },
+      photo: 'photos/pinetop-family-pines.jpg', story: '',
+      photos: ['photos/pinetop-bridge-family.jpg', 'photos/pinetop-pattycake.jpg', 'photos/pinetop-shoulders.jpg', 'photos/pinetop-lake-explorer.jpg', 'photos/pinetop-dock.jpg', 'photos/pinetop-blanket.jpg', 'photos/pinetop-shoulders-side.jpg', 'photos/pinetop-silly-face.jpg', 'photos/pinetop-lake-geese.jpg', 'photos/pinetop-tall-pines.jpg', 'photos/pinetop-lake-clouds.jpg', 'photos/pinetop-meadow-sky.jpg', 'photos/family-picnic-2.jpg', 'photos/family-picnic-1.jpg'] },
     { name: 'Lost Dutchman', kind: 'lakes', area: 'Lost Dutchman State Park, Superstition Mountains',
       line: 'A cabin stay at the foot of the Superstitions.', lat: 33.46, lon: -111.48,
       photo: '', story: '' },
@@ -88,6 +89,12 @@ window.SITE = {
        { youtube: 'dQw4w9WgXcQ', caption: 'Grand Canyon day' },   (the code after v= in a YouTube link)
      While this list is empty, the site shows the paintings instead. */
   gallery: [
+    { photo: 'photos/pinetop-family-pines.jpg', caption: 'Summer in the pines at Pinetop' },
+    { video: 'videos/pinetop-walk.mp4', caption: 'A walk through the Pinetop forest' },
+    { photo: 'photos/pinetop-pattycake.jpg', caption: 'Patty-cake on the picnic blanket' },
+    { photo: 'photos/pinetop-dock.jpg', caption: 'The lake and dock at Pinetop' },
+    { video: 'videos/pinetop-lake-pines.mp4', caption: 'Pines by the lake' },
+    { photo: 'photos/pinetop-lake-explorer.jpg', caption: 'Little explorer by the lake' },
     { photo: 'photos/madera-couple.jpg', caption: 'Fall colours in Madera Canyon' },
     { photo: 'photos/madera-bridge-kids.jpg', caption: 'Watching the creek, Madera Canyon' },
     { photo: 'photos/madera-trail-kids.jpg', caption: 'Little explorers on the trail' },
