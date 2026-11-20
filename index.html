@@ -214,6 +214,18 @@ nav a:hover{opacity:1;color:var(--gold)}
 .tnav small{color:var(--mist);font-size:14px}
 .tnav .kick{margin-bottom:4px;font-size:12px}
 
+/* tips & resources page */
+.tipsHead{padding-top:clamp(110px,12vw,160px)}
+.tipsHead .back{margin-bottom:32px}
+.tipsHead h1{font-size:clamp(44px,6vw,84px);margin:0 0 .3em}
+.tipsHead p{font-size:clamp(18px,1.6vw,21px);max-width:52ch}
+.tipsGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:20px;align-items:start}
+.tcard{background:#fffaf3;border:1px solid rgba(43,29,21,.12);border-radius:18px;padding:26px 28px 14px}
+.tcard h2{font-size:clamp(26px,2.4vw,32px);margin-bottom:.45em}
+.tlist{padding-left:1.1em;margin:0 0 1em}.tlist li{margin:5px 0}
+.clist{list-style:none;padding:0;margin:0 0 1em}.clist li{display:flex;gap:12px;align-items:center;min-height:44px;border-bottom:1px solid rgba(43,29,21,.12)}.clist .tick{border-color:var(--brown)}
+.tlinks{list-style:none;padding:0;margin:0 0 1em}.tlinks li{margin:8px 0}.tlinks a{color:#b4501b;font-weight:600;text-decoration:none}.tlinks a:hover{text-decoration:underline}
+
 /* footer */
 footer{background:var(--night);padding:56px 0 36px;border-top:1px solid var(--line)}
 .fgrid{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(2,minmax(0,1fr));gap:32px}
@@ -241,7 +253,7 @@ dialog.lb::backdrop{background:rgba(10,7,5,.9)}
   .tFacts{position:static}
 }
 @media(max-width:600px){
-  .wide-only{display:none}nav a{padding:10px 6px;font-size:14px}
+  .wide-only{display:none}nav a{padding:10px 4px;font-size:13.5px}nav.scroll{gap:2px}
   .kchips{gap:8px}.kchip{min-height:44px;padding:6px 14px;font-size:14px;gap:7px}.kchip b{font-size:20px}.brand span{display:none}
   .bar{flex-wrap:wrap;gap:0 12px;padding-block:6px}nav.scroll{order:3;width:100%;margin-left:-10px}
   .masonry{columns:2;column-gap:10px}.masonry figure{margin-bottom:12px}.masonry figcaption{font-size:13px}
@@ -264,7 +276,7 @@ dialog.lb::backdrop{background:rgba(10,7,5,.9)}
 <header id="hdr">
   <div class="bar">
     <a class="brand" href="#top"><svg><use href="#mark"/></svg><span>The Obih Adventures</span></a>
-    <nav class="scroll" aria-label="Main"><a href="#about">About<span class="wide-only"> us</span></a><a href="#places">Our trips</a><a href="#map">Map</a><a href="#photos">Photos</a><a href="#bucket">Bucket list</a><a href="#guestbook">Guestbook</a></nav>
+    <nav class="scroll" aria-label="Main"><a href="#about">About<span class="wide-only"> us</span></a><a href="#places">Our trips</a><a href="#map">Map</a><a href="#photos">Photos</a><a href="#bucket">Bucket list</a><a href="#tips">Tips<span class="wide-only"> &amp; resources</span></a><a href="#guestbook">Guestbook</a></nav>
   </div>
 </header>
 
@@ -333,11 +345,12 @@ dialog.lb::backdrop{background:rgba(10,7,5,.9)}
 </main>
 
 <main id="tripView" hidden></main>
+<main id="tipsView" hidden></main>
 
 <footer>
   <div class="wrap fgrid">
     <div><a class="brand" href="#top"><svg><use href="#mark"/></svg>The Obih Adventures</a><p class="soft small" style="margin-top:12px">A family travel journal from Tucson, Arizona.</p></div>
-    <div><h4>Explore</h4><ul><li><a href="#places">Our trips</a></li><li><a href="#map">Map</a></li><li><a href="#photos">Photos</a></li></ul></div>
+    <div><h4>Explore</h4><ul><li><a href="#places">Our trips</a></li><li><a href="#map">Map</a></li><li><a href="#photos">Photos</a></li><li><a href="#tips">Tips &amp; resources</a></li></ul></div>
     <div><h4>Say hi</h4><ul><li><a href="#bucket">Bucket list</a></li><li><a href="#guestbook">Guestbook</a></li><li><a href="#about">About us</a></li></ul></div>
   </div>
 </footer>
@@ -433,8 +446,9 @@ const has=v=>v!==undefined&&v!==null&&String(v).trim()!=='';
 const stars=n=>{n=Math.max(0,Math.min(5,Math.round(+n||0)));return `<span class="stars" role="img" aria-label="${n} out of 5">${'★'.repeat(n)}<span class="off">${'★'.repeat(5-n)}</span></span>`};
 const review=r=>{if(!r||typeof r!=='object')return '';
   const rows=RV.filter(([k])=>+r[k]>0).map(([k,l])=>`<dt>${l}</dt><dd>${stars(r[k])}</dd>`).join('')+(has(r.again)?`<dt>Would we go back?</dt><dd>${esc(r.again)}</dd>`:'');
-  const notes=has(r.notes)?paras(r.notes):'';if(!rows&&!notes)return '';
-  return `<section class="review"><h4>Campground review${has(r.campground)?': '+esc(r.campground):''}</h4>${rows?`<dl>${rows}</dl>`:''}${notes}</section>`};
+  const notes=has(r.notes)?paras(r.notes):'',title=`<h4>Campground review${has(r.campground)?': '+esc(r.campground):''}</h4>`;
+  if(!rows&&!notes)return `<section class="review">${title}<p class="soft coming" style="margin:0 0 14px">Our review is coming soon.</p></section>`;
+  return `<section class="review">${title}${rows?`<dl>${rows}</dl>`:''}${notes}</section>`};
 const tripMedia=p=>{const seen=new Set(),out=[];const add=g=>{const k=g.photo||g.video||g.youtube;if(k&&!seen.has(k)){seen.add(k);out.push(g)}};
   [p.photo,...(p.photos||[])].filter(Boolean).forEach(src=>add({photo:src,caption:capOf[src]||''}));
   S.gallery.forEach(g=>{if(tripOf(g)===p.id)add(g)});return out};
@@ -554,13 +568,24 @@ const renderTrip=id=>{const p=byId(id),i=order.indexOf(p),m=mediaOf[id],st=p.pho
     if(navigator.share){try{await navigator.share({title:p.name+' · '+S.title,url});return}catch(err){if(err&&err.name==='AbortError')return}}
     try{await navigator.clipboard.writeText(url);btn.textContent='Link copied'}catch(err){btn.textContent=url}
     setTimeout(()=>{btn.textContent='Share this trip'},2500)}};
+const tipsV=$('#tipsView');
+const tipSec=x=>{const list=(x.list||[]).filter(has),links=(x.links||[]).filter(l=>l&&/^https?:\/\//i.test(String(l.url||''))),check=/checklist/i.test(x.title);
+  const body=(has(x.text)?paras(x.text):'')
+    +(list.length?`<ul class="${check?'clist':'tlist'}">${list.map(i=>`<li>${check?'<span class="tick" aria-hidden="true"></span>':''}<span>${esc(i)}</span></li>`).join('')}</ul>`:'')
+    +(links.length?`<ul class="tlinks">${links.map(l=>`<li><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.name||l.url)} ↗</a></li>`).join('')}</ul>`:'');
+  return `<section class="tcard"><h2>${esc(x.title)}</h2>${body||'<p class="soft coming">Coming soon.</p>'}</section>`};
+const renderTips=()=>{const T=S.tips||{},secs=(T.sections||[]).filter(x=>x&&has(x.title));
+  tipsV.innerHTML=`<article><section class="band topo tipsHead"><div class="wrap"><a class="back" href="#top">← Home</a><span class="kick">Resources</span><h1>Camping Tips &amp; Resources</h1>${has(T.intro)?paras(T.intro):'<p class="soft coming">Our tips from the trail are coming soon.</p>'}</div></section>
+  <section class="band paper"><div class="wrap tipsGrid">${secs.map(tipSec).join('')}</div></section></article>`};
 let view='home',homeY=0;
 const jump=y=>{try{scrollTo({top:y,behavior:'instant'})}catch(e){scrollTo(0,y)}};
-const route=()=>{const id=fromHash();
-  if(id){if(view===id)return;if(view==='home')homeY=scrollY;renderTrip(id);home.hidden=true;tv.hidden=false;view=id;
-    document.title=byId(id).name+' · '+S.title;jump(0);hdr.classList.add('solid');return}
+const route=()=>{const id=fromHash(),want=id||(location.hash==='#tips'?'tips':'home');
+  if(want!=='home'){if(view===want)return;if(view==='home')homeY=scrollY;tv.hidden=true;tipsV.hidden=true;
+    if(id){renderTrip(id);tv.hidden=false;document.title=byId(id).name+' · '+S.title}
+    else{renderTips();tipsV.hidden=false;document.title='Camping Tips & Resources · '+S.title}
+    home.hidden=true;view=want;jump(0);hdr.classList.add('solid');return}
   if(view==='home')return;
-  tv.hidden=true;tv.innerHTML='';home.hidden=false;view='home';document.title=S.title;
+  tv.hidden=true;tv.innerHTML='';tipsV.hidden=true;tipsV.innerHTML='';home.hidden=false;view='home';document.title=S.title;
   let t=null;try{t=location.hash.length>1&&document.getElementById(decodeURIComponent(location.hash.slice(1)))}catch(e){}
   if(t)t.scrollIntoView({behavior:'instant'});else jump(homeY)};
 const hdr=$('#hdr'),onScroll=()=>hdr.classList.toggle('solid',scrollY>120||view!=='home');addEventListener('scroll',onScroll,{passive:true});

@@ -60,10 +60,12 @@ window.SITE = {
        moments:    favourite family moments, funny or unexpected ones
      Use backticks ` ` for several paragraphs, same as story.
 
-     OPTIONAL CAMPGROUND REVIEW: paste this inside a place, after the moments line,
-     and give each a number from 1 to 5 (leave out any you don't want):
+     CAMPGROUND REVIEW: places where we stayed overnight have an empty review line.
+     Give each a number from 1 to 5 stars (0 = not rated yet), for example:
        review: { campground: 'Name of campground', location: 5, facilities: 4, scenery: 5,
                  family: 5, overall: 5, again: 'Yes', notes: 'A few words about it.' },
+     Until you fill it in, the trip page says "Our review is coming soon."
+     To add a review to another place, copy the review line into it.
 
      To add a place, copy one { ... }, block, paste it below, and change it. */
   places: [
@@ -71,6 +73,7 @@ window.SITE = {
       line: 'Cool pine forest an hour up the mountain from home.', lat: 32.44, lon: -110.79,
       photo: 'photos/lemmon-tent-pines.jpg', story: '',
       when: 'November 2026', journey: '', campsite: '', experience: '', moments: '',
+      review: { campground: '', location: 0, facilities: 0, scenery: 0, family: 0, overall: 0, again: '', notes: '' },
       photos: ['photos/lemmon-family-aspens.jpg', 'photos/lemmon-shoulders.jpg', 'photos/lemmon-silly-pose.jpg', 'photos/lemmon-selfie-view.jpg', 'photos/lemmon-campsite.jpg', 'photos/lemmon-hammock.jpg', 'photos/lemmon-mug.jpg', 'photos/lemmon-pines-up.jpg', 'photos/lemmon-vista.jpg', 'photos/lemmon-clouds.jpg', 'photos/lemmon-chairlift.jpg', 'photos/lemmon-selfie-view-2.jpg'] },
     { name: 'Grand Canyon', kind: 'parks', area: 'Northern Arizona',
       line: 'Standing at the rim together.', lat: 36.06, lon: -112.11,
@@ -101,21 +104,25 @@ window.SITE = {
       line: 'A cabin stay by the Verde River, with cottonwoods, pines and creek splashing.', lat: 34.76, lon: -112.02,
       photo: 'photos/deadhorse-cabin-family.jpg', story: '',
       when: 'July 2025', journey: '', campsite: '', experience: '', moments: '',
+      review: { campground: '', location: 0, facilities: 0, scenery: 0, family: 0, overall: 0, again: '', notes: '' },
       photos: ['photos/deadhorse-creek-splash.jpg', 'photos/deadhorse-river-carry.jpg', 'photos/deadhorse-river-log.jpg', 'photos/deadhorse-cottonwoods.jpg', 'photos/deadhorse-pines-pose.jpg', 'photos/deadhorse-pines-seated.jpg', 'photos/deadhorse-trail-sign.jpg', 'photos/deadhorse-cabin-family-2.jpg'] },
     { name: 'Lake Havasu', kind: 'lakes', area: 'Lake Havasu State Park, Lake Havasu City',
       line: 'A cabin stay on the Colorado River, with sunsets on the beach and a boat ride through the canyon.', lat: 34.50, lon: -114.36,
       photo: 'photos/havasu-sunset-chairs.jpg', story: '',
       when: 'March 2025', journey: '', campsite: '', experience: '', moments: '',
+      review: { campground: '', location: 0, facilities: 0, scenery: 0, family: 0, overall: 0, again: '', notes: '' },
       photos: ['photos/havasu-shore-walk.jpg', 'photos/havasu-beach-pjs.jpg', 'photos/havasu-sunset-buoys.jpg', 'photos/havasu-cabin.jpg', 'photos/havasu-boat-dad.jpg', 'photos/havasu-canyon-cove.jpg', 'photos/havasu-phone-booth.jpg'] },
     { name: 'Alamo Lake', kind: 'lakes', area: 'Alamo Lake State Park, near Wenden',
       line: 'A cabin stay on quiet water, far from everything.', lat: 34.23, lon: -113.58,
       photo: 'photos/alamo-chairs.jpg', story: '',
       when: 'December 2025', journey: '', campsite: '', experience: '', moments: '',
+      review: { campground: '', location: 0, facilities: 0, scenery: 0, family: 0, overall: 0, again: '', notes: '' },
       photos: ['photos/alamo-family-view.jpg', 'photos/alamo-sunset-joy.jpg', 'photos/alamo-cabin-porch-2.jpg', 'photos/alamo-reflection.jpg', 'photos/alamo-shoulders.jpg', 'photos/alamo-road-pose.jpg', 'photos/alamo-road-mom.jpg', 'photos/alamo-road-dad.jpg', 'photos/alamo-sunset-family.jpg', 'photos/alamo-cabin-porch.jpg', 'photos/alamo-dawn.jpg'] },
     { name: 'Roper Lake', kind: 'lakes', area: 'Roper Lake State Park, near Safford',
       line: 'A lakeside cabin stay under Mount Graham.', lat: 32.76, lon: -109.70,
       photo: 'photos/roper-lake-overlook.jpg', story: '',
       when: 'March 2026', journey: '', campsite: '', experience: '', moments: '',
+      review: { campground: '', location: 0, facilities: 0, scenery: 0, family: 0, overall: 0, again: '', notes: '' },
       photos: ['photos/roper-family-selfie.jpg', 'photos/roper-braids.jpg', 'photos/roper-hug-lake.jpg', 'photos/roper-porch-couple.jpg', 'photos/roper-swing-mom.jpg', 'photos/roper-swing-dad.jpg', 'photos/roper-swing-view.jpg', 'photos/roper-breakfast.jpg', 'photos/roper-walk.jpg', 'photos/roper-sign.jpg', 'photos/roper-overlook.jpg', 'photos/roper-selfie-mountains.jpg', 'photos/roper-buoys-glow.jpg', 'photos/roper-porch-swing.jpg', 'photos/roper-cabins-sunset.jpg', 'photos/roper-reeds-sunset.jpg', 'photos/roper-blue-hour.jpg', 'photos/roper-road-dusk.jpg', 'photos/cabin-porch.jpg', 'photos/hero-lake.jpg'] },
     { name: 'Patagonia Lake', kind: 'lakes', area: 'Patagonia Lake State Park, south of Tucson',
       line: 'A lake tucked into the grassland hills near the border.', lat: 31.49, lon: -110.85,
@@ -203,6 +210,24 @@ window.SITE = {
   bucketList: [
     { name: 'Lost Dutchman State Park', done: false },
   ],
+
+  /* ---------- CAMPING TIPS & RESOURCES (its own page, in the menu) ----------
+     Fill in any section; empty ones say "Coming soon."
+       text:  a few sentences (use backticks ` ` for several paragraphs)
+       list:  short items, e.g. list: ['Headlamps', 'Extra blankets', 'Firewood'],
+       links: e.g. links: [ { name: 'Where we book cabins', url: 'https://...' } ],
+     The packing checklist shows its list as tick boxes. */
+  tips: {
+    intro: '',
+    sections: [
+      { title: 'Family camping essentials', text: '', list: [] },
+      { title: 'Packing checklist', list: [] },
+      { title: 'Camping with kids', text: '', list: [] },
+      { title: 'Camping meals', text: '', list: [] },
+      { title: 'Lessons learned', text: '', list: [] },
+      { title: 'Useful links', links: [] },
+    ],
+  },
 
   /* ---------- GUESTBOOK ----------
      Paste a Google Form link here so visitors can leave notes.
