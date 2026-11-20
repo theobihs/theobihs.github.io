@@ -60,7 +60,8 @@ window.SITE = {
       photos: ['photos/sedona-bell-rock.jpg', 'photos/sedona-bell-rock-2.jpg', 'photos/sedona-drive.jpg'] },
     { name: 'Sabino Canyon', kind: 'mountains', area: 'Coronado National Forest, northeast Tucson',
       line: 'Desert canyon, creek and saguaros on the edge of town.', lat: 32.31, lon: -110.82,
-      photo: '', story: '' },
+      photo: 'photos/sabino-creek-wade.jpg', story: '',
+      photos: ['photos/sabino-creek-rest.jpg'] },
     { name: 'Madera Canyon', kind: 'mountains', area: 'Santa Rita Mountains, south of Tucson',
       line: 'Shady trails and birdsong in the Santa Ritas.', lat: 31.72, lon: -110.88,
       photo: 'photos/madera-couple.jpg', story: '',
@@ -97,6 +98,10 @@ window.SITE = {
        { youtube: 'dQw4w9WgXcQ', caption: 'Grand Canyon day' },   (the code after v= in a YouTube link)
      While this list is empty, the site shows the paintings instead. */
   gallery: [
+    { photo: 'photos/sabino-creek-rest.jpg', caption: 'Cooling off in Sabino Creek' },
+    { video: 'videos/sabino-creek-carry.mp4', caption: 'Crossing the creek, Sabino Canyon' },
+    { photo: 'photos/sabino-creek-wade.jpg', caption: 'Wading in Sabino Creek' },
+    { video: 'videos/sabino-road.mp4', caption: 'Walking into Sabino Canyon' },
     { photo: 'photos/alamo-chairs.jpg', caption: 'Three chairs by the water, Alamo Lake' },
     { photo: 'photos/alamo-sunset-joy.jpg', caption: 'Sunset silliness at Alamo Lake' },
     { photo: 'photos/alamo-reflection.jpg', caption: 'Clouds on still water' },
