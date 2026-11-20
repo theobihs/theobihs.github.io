@@ -14,24 +14,21 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%2318120e'/%3E%3Ccircle cx='20' cy='20' r='16.5' fill='none' stroke='%23e6a93a' stroke-width='2'/%3E%3Cpath d='M8 27 L15.5 17 L20 22 L26 14 L32 27Z' fill='%23e6a93a'/%3E%3Ccircle cx='26.5' cy='11.5' r='2.6' fill='%23e6a93a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;0,7..72,700;1,7..72,400&display=swap" rel="stylesheet">
 <style>
 /* VOICE: premium travel editorial, calm to explore: big pictures, few words, lots of air.
    IDEA: an autumn field guide to the places our family has been, printed on dark topo paper.
    PICTURE: our own photos, full-bleed; each trip has its own page like a chapter in a journal.
-   COLOUR and TYPE: dark earth ground with topo lines, warm paper bands; burnt orange, gold, maple. Fraunces headings, Literata for reading text, DM Sans for labels.
+   COLOUR and TYPE: dark earth ground with topo lines, warm paper bands; burnt orange, gold, maple. Fraunces headings, Literata for everything else.
    LAYOUT: full-screen opening, then one idea per band: about, trips (journal entries), map, photos by trip, bucket list, guestbook, footer. */
 :root{color-scheme:dark;--night:#18120e;--earth:#221912;--paper:#f8efe3;--ink:#2b1d15;--cream:#f6eadb;--mist:#c9b5a2;
   --orange:#d9692a;--gold:#e6a93a;--maple:#9b3220;--brown:#7a6252;--line:rgba(246,234,219,.14)}
 *{box-sizing:border-box;min-width:0}
 [hidden]{display:none!important}
-body{margin:0;background:var(--night);color:var(--cream);font:17px/1.65 "DM Sans",system-ui,sans-serif;overflow-x:clip}
+body{margin:0;background:var(--night);color:var(--cream);font:17px/1.65 "Literata",Georgia,serif;overflow-x:clip}
 h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:600;line-height:1.08;letter-spacing:-.01em;text-wrap:balance;margin:0 0 .35em}
 h2{font-size:clamp(34px,4.4vw,52px)}h3{font-size:26px}
 p{margin:0 0 1em;max-width:60ch}
-/* reading text in Literata; labels, buttons, dates and menus stay in DM Sans */
-p,.eText .ln,.masonry figcaption,.lbCap #lbCap,.list li{font-family:"Literata",Georgia,serif}
-.btn,.kick,.small,.soft.small{font-family:"DM Sans",system-ui,sans-serif}
 a{color:inherit;text-underline-offset:4px}
 html{scroll-padding-top:68px;scroll-behavior:smooth}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
@@ -98,7 +95,7 @@ nav a:hover{opacity:1;color:var(--gold)}
 .ePic img,.ePic svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
 .entry:hover .ePic img,.entry:hover .ePic svg{transform:scale(1.03)}
 .eText{display:block}
-.eText h3{font-size:clamp(34px,3.6vw,50px);margin:0 0 .15em}
+.eText h3{font-size:clamp(28px,2.6vw,38px);margin:0 0 .2em}
 .eText .area{display:block;color:var(--mist);font-size:15px;margin-bottom:16px}
 .eText .ln{display:block;font-size:clamp(18px,1.5vw,20px);line-height:1.55;max-width:38ch}
 .eThumbs{display:flex;gap:8px;margin:22px 0 24px;align-items:center}
@@ -117,7 +114,7 @@ nav a:hover{opacity:1;color:var(--gold)}
 .pin:hover .halo,.pin:focus-visible .halo{opacity:.18}
 .pin .dot{fill:var(--night);stroke:var(--gold);stroke-width:4}
 .pin.on .dot{fill:var(--gold)}
-.pin text{font:600 28px "DM Sans",sans-serif;fill:var(--cream);paint-order:stroke;stroke:var(--night);stroke-width:8px}
+.pin text{font:600 28px "Literata",Georgia,serif;fill:var(--cream);paint-order:stroke;stroke:var(--night);stroke-width:8px}
 .pin.home .dot{fill:var(--cream);stroke:none}
 .box{fill:none;stroke:var(--cream);stroke-opacity:.5;stroke-width:2;stroke-dasharray:8 6}.lead{stroke:var(--cream);stroke-opacity:.35;stroke-width:2;stroke-dasharray:8 6}
 .inset{fill:rgba(246,234,219,.04);stroke:var(--line);stroke-width:2}.insetT{font:400 24px "Fraunces",Georgia,serif;fill:var(--gold)}
@@ -177,7 +174,7 @@ nav a:hover{opacity:1;color:var(--gold)}
 .tCoverText a{pointer-events:auto}
 .tCoverText>div{text-shadow:0 2px 16px rgba(0,0,0,.55)}
 .tCover .kick{color:#f6c66a}
-.tCover h1{font-size:clamp(46px,7vw,100px);line-height:1;margin:0 0 .12em}
+.tCover h1{font-size:clamp(40px,5.4vw,76px);line-height:1;margin:0 0 .12em}
 .tCover .area{font-size:clamp(17px,1.5vw,20px);margin:0;color:#f3e2d0}
 .back{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;background:rgba(24,18,14,.6);border:1px solid rgba(246,234,219,.3);color:#fff7ee;text-decoration:none;font-weight:700;font-size:15px;backdrop-filter:blur(6px)}
 .back:hover{background:rgba(24,18,14,.85)}
@@ -190,7 +187,7 @@ nav a:hover{opacity:1;color:var(--gold)}
 .tFacts dl{display:grid;gap:2px;margin:0 0 20px;font-size:15px}
 .tFacts dt{color:var(--brown);font-size:13px;margin-top:10px}.tFacts dt:first-child{margin-top:0}.tFacts dd{margin:0;font-weight:500}
 .review{margin-top:36px;padding:22px 24px 8px;background:#fffaf3;border-radius:16px;border:1px solid rgba(43,29,21,.12)}
-.review h4{font:700 13px/1.4 "DM Sans",sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--maple);margin:0 0 12px}
+.review h4{font:700 13px/1.4 "Literata",Georgia,serif;letter-spacing:.1em;text-transform:uppercase;color:var(--maple);margin:0 0 12px}
 .review dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:0 0 12px;font-size:15px}
 .review dt{color:var(--brown)}.review dd{margin:0}
 .stars{color:var(--orange);letter-spacing:2px}.stars .off{color:rgba(43,29,21,.18)}
