@@ -14,20 +14,20 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%2318120e'/%3E%3Ccircle cx='20' cy='20' r='16.5' fill='none' stroke='%23e6a93a' stroke-width='2'/%3E%3Cpath d='M8 27 L15.5 17 L20 22 L26 14 L32 27Z' fill='%23e6a93a'/%3E%3Ccircle cx='26.5' cy='11.5' r='2.6' fill='%23e6a93a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
 <style>
 /* VOICE: premium travel editorial, calm to explore: big pictures, few words, lots of air.
    IDEA: an autumn field guide to the places our family has been, printed on dark topo paper.
    PICTURE: our own photos, full-bleed; each trip has its own page like a chapter in a journal.
-   COLOUR and TYPE: dark earth ground with topo lines, warm paper bands; burnt orange, gold, maple. Big Shoulders Display + DM Sans.
+   COLOUR and TYPE: dark earth ground with topo lines, warm paper bands; burnt orange, gold, maple. Young Serif headings + DM Sans.
    LAYOUT: full-screen opening, then one idea per band: about, trips (journal entries), map, photos by trip, bucket list, guestbook, footer. */
 :root{color-scheme:dark;--night:#18120e;--earth:#221912;--paper:#f8efe3;--ink:#2b1d15;--cream:#f6eadb;--mist:#c9b5a2;
   --orange:#d9692a;--gold:#e6a93a;--maple:#9b3220;--brown:#7a6252;--line:rgba(246,234,219,.14)}
 *{box-sizing:border-box;min-width:0}
 [hidden]{display:none!important}
 body{margin:0;background:var(--night);color:var(--cream);font:17px/1.65 "DM Sans",system-ui,sans-serif;overflow-x:clip}
-h1,h2,h3{font-family:"Big Shoulders Display","Arial Narrow",sans-serif;font-weight:800;line-height:1.02;text-wrap:balance;margin:0 0 .35em}
-h2{font-size:clamp(40px,5.4vw,60px)}h3{font-size:28px}
+h1,h2,h3{font-family:"Young Serif",Georgia,serif;font-weight:400;line-height:1.08;letter-spacing:-.01em;text-wrap:balance;margin:0 0 .35em}
+h2{font-size:clamp(34px,4.4vw,52px)}h3{font-size:26px}
 p{margin:0 0 1em;max-width:60ch}
 a{color:inherit;text-underline-offset:4px}
 html{scroll-padding-top:68px;scroll-behavior:smooth}
@@ -53,7 +53,7 @@ button{font:inherit;font-size:16px;color:inherit}
 header{position:fixed;inset:0 0 auto;z-index:30;color:#fff7ee;transition:background .35s,box-shadow .35s}
 header.solid{color:var(--cream);background:rgba(24,18,14,.94);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
 .bar{max-width:1240px;margin:0 auto;padding:0 max(5vw,18px);display:flex;align-items:center;gap:20px;min-height:68px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Big Shoulders Display",sans-serif;font-weight:800;font-size:24px;flex:none}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"Young Serif",Georgia,serif;font-size:21px;flex:none}
 .brand svg{width:34px;height:34px;color:var(--gold)}
 nav.scroll{display:flex;gap:4px;margin-left:auto}
 nav a{padding:10px 12px;text-decoration:none;font-size:15px;font-weight:500;white-space:nowrap;opacity:.85}
@@ -74,16 +74,16 @@ nav a:hover{opacity:1;color:var(--gold)}
 .hero>svg{position:absolute;inset:0;width:100%;height:100%}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(24,18,14,.45) 0%,rgba(24,18,14,0) 30%,rgba(24,18,14,.15) 55%,rgba(24,18,14,.92) 100%)}
 .heroText{position:relative;z-index:1;padding-bottom:clamp(40px,7vw,88px);width:100%}
-.hero h1{font-size:clamp(60px,11vw,148px);line-height:.9;max-width:9ch;margin-bottom:.2em}
+.hero h1{font-size:clamp(48px,7.6vw,108px);line-height:1;max-width:10ch;margin-bottom:.25em}
 .hero p{font-size:clamp(18px,1.6vw,21px);max-width:34ch;color:#f3e2d0}
 .facts{display:flex;flex-wrap:wrap;gap:clamp(20px,5vw,64px);margin-top:28px}
-.facts b{display:block;font-family:"Big Shoulders Display",sans-serif;font-size:clamp(36px,4vw,48px);line-height:1;color:var(--gold)}
+.facts b{display:block;font-family:"Young Serif",Georgia,serif;font-size:clamp(32px,3.4vw,42px);line-height:1;color:var(--gold)}
 .facts span{font-size:14px;color:#e8d6c3}
 
 /* about */
 .intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(28px,6vw,96px);align-items:start}
 .intro .lead{font-size:clamp(20px,2vw,24px);line-height:1.5}
-.intro .sig{font-family:"Big Shoulders Display",sans-serif;font-size:26px;font-weight:700;color:var(--maple)}
+.intro .sig{font-family:"Young Serif",Georgia,serif;font-size:24px;color:var(--maple)}
 .fam{width:100%;max-height:560px;object-fit:cover;object-position:50% 72%;border-radius:16px;margin:8px 0 16px;display:block}
 
 /* trips: journal entries, newest first */
@@ -95,7 +95,7 @@ nav a:hover{opacity:1;color:var(--gold)}
 .ePic img,.ePic svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
 .entry:hover .ePic img,.entry:hover .ePic svg{transform:scale(1.03)}
 .eText{display:block}
-.eText h3{font-size:clamp(44px,5vw,68px);margin:0 0 .1em}
+.eText h3{font-size:clamp(34px,3.6vw,50px);margin:0 0 .15em}
 .eText .area{display:block;color:var(--mist);font-size:15px;margin-bottom:16px}
 .eText .ln{display:block;font-size:clamp(18px,1.5vw,20px);line-height:1.55;max-width:38ch}
 .eThumbs{display:flex;gap:8px;margin:22px 0 24px;align-items:center}
@@ -117,7 +117,7 @@ nav a:hover{opacity:1;color:var(--gold)}
 .pin text{font:600 28px "DM Sans",sans-serif;fill:var(--cream);paint-order:stroke;stroke:var(--night);stroke-width:8px}
 .pin.home .dot{fill:var(--cream);stroke:none}
 .box{fill:none;stroke:var(--cream);stroke-opacity:.5;stroke-width:2;stroke-dasharray:8 6}.lead{stroke:var(--cream);stroke-opacity:.35;stroke-width:2;stroke-dasharray:8 6}
-.inset{fill:rgba(246,234,219,.04);stroke:var(--line);stroke-width:2}.insetT{font:700 26px "Big Shoulders Display",sans-serif;fill:var(--gold)}
+.inset{fill:rgba(246,234,219,.04);stroke:var(--line);stroke-width:2}.insetT{font:400 24px "Young Serif",Georgia,serif;fill:var(--gold)}
 .mchips{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
 .mchip{min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:none;cursor:pointer;font-size:14px;transition:border-color .2s}
 .mchip:hover{border-color:var(--mist)}
@@ -136,7 +136,7 @@ nav a:hover{opacity:1;color:var(--gold)}
 .gchips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 clamp(32px,4vw,48px)}
 .ggroup+.ggroup{margin-top:clamp(44px,5vw,64px)}
 .ghead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 24px;border-top:1px solid rgba(43,29,21,.16);padding-top:18px;margin-bottom:20px}
-.ghead h3{font-size:clamp(32px,3vw,42px);margin:0 12px 0 0;display:inline}
+.ghead h3{font-size:clamp(26px,2.4vw,34px);margin:0 12px 0 0;display:inline}
 .glink{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;color:#b4501b;text-decoration:none;transition:gap .2s}
 .glink:hover{gap:12px}
 .masonry{columns:3 240px;column-gap:16px}
@@ -174,13 +174,13 @@ nav a:hover{opacity:1;color:var(--gold)}
 .tCoverText a{pointer-events:auto}
 .tCoverText>div{text-shadow:0 2px 16px rgba(0,0,0,.55)}
 .tCover .kick{color:#f6c66a}
-.tCover h1{font-size:clamp(60px,10vw,140px);line-height:.9;margin:0 0 .12em}
+.tCover h1{font-size:clamp(46px,7vw,100px);line-height:1;margin:0 0 .12em}
 .tCover .area{font-size:clamp(17px,1.5vw,20px);margin:0;color:#f3e2d0}
 .back{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;background:rgba(24,18,14,.6);border:1px solid rgba(246,234,219,.3);color:#fff7ee;text-decoration:none;font-weight:700;font-size:15px;backdrop-filter:blur(6px)}
 .back:hover{background:rgba(24,18,14,.85)}
 .tBody{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,320px);gap:clamp(32px,6vw,96px);align-items:start}
 .tStory .lead{font-size:clamp(22px,2.2vw,28px);line-height:1.4;max-width:30ch;margin-bottom:.8em}
-.tStory .sh{font-size:clamp(30px,3vw,40px);margin:1.3em 0 .35em}
+.tStory .sh{font-size:clamp(26px,2.4vw,32px);margin:1.3em 0 .35em}
 .tStory p{font-size:18px}
 .coming{font-style:italic}
 .tFacts{position:sticky;top:92px;padding:24px;border-radius:18px;background:#fffaf3;border:1px solid rgba(43,29,21,.12)}
@@ -198,7 +198,7 @@ nav a:hover{opacity:1;color:var(--gold)}
 .tnav:last-child:not(:first-child){flex-direction:row-reverse;text-align:right}
 .tnPic{position:relative;flex:none;width:96px;aspect-ratio:1;border-radius:12px;overflow:hidden}
 .tnPic img,.tnPic svg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.tnav b{display:block;font-family:"Big Shoulders Display",sans-serif;font-weight:800;font-size:32px;line-height:1}
+.tnav b{display:block;font-family:"Young Serif",Georgia,serif;font-size:24px;line-height:1.15}
 .tnav small{color:var(--mist);font-size:14px}
 .tnav .kick{margin-bottom:4px;font-size:12px}
 
@@ -233,7 +233,7 @@ dialog.lb::backdrop{background:rgba(10,7,5,.9)}
   .bar{flex-wrap:wrap;gap:0 12px;padding-block:6px}nav.scroll{order:3;width:100%;margin-left:-10px}
   .masonry{columns:2;column-gap:10px}.masonry figure{margin-bottom:12px}.masonry figcaption{font-size:13px}
   .tNav{grid-template-columns:minmax(0,1fr)}.tnav:last-child:not(:first-child){flex-direction:row;text-align:left}
-  .tnPic{width:72px}.tnav b{font-size:26px}
+  .tnPic{width:72px}.tnav b{font-size:21px}
   .tCover{height:72vh}.tCoverText{padding-top:112px}
   .lbStage{padding:60px 8px 0}.lbNav{top:auto;bottom:18px;transform:none;width:44px;height:44px}.lbCap{padding:16px 64px 22px}
 }
@@ -482,7 +482,7 @@ const drawMap=()=>{if(!places.length)return;const h=P([-110.97,32.22]),hq=Q([-11
   `<g class="pin home"><circle class="dot" r="5" cx="${h[0]}" cy="${h[1]}"/></g><g class="pin home" transform="translate(${hq[0]} ${hq[1]})"><circle class="dot" r="9"/><text x="-16" y="7" text-anchor="end">Home</text></g>`+
   places.map(p=>p.near?pin(p,P([p.lon,p.lat]),0)+pin(p,Q([p.lon,p.lat]),1):pin(p,P([p.lon,p.lat]),1)).join('');
   const p=byId(sel),i=places.indexOf(p);
-  $('#mapCard').innerHTML=`<div class="pic">${pic(p,'m'+i,false)}</div><div class="body"><div class="soft small">${KIND[p.kind]}</div><h3 style="font-size:36px;margin:2px 0 6px">${esc(p.name)}</h3><p style="margin:0">${esc(p.line)}</p><dl><dt>Where</dt><dd>${esc(p.area)}</dd>${has(p.when)?`<dt>When</dt><dd>${esc(p.when)}</dd>`:''}</dl><a class="btn" href="#${slug(p)}">See this trip ${ARROW}</a></div>`;
+  $('#mapCard').innerHTML=`<div class="pic">${pic(p,'m'+i,false)}</div><div class="body"><div class="soft small">${KIND[p.kind]}</div><h3 style="font-size:30px;margin:2px 0 6px">${esc(p.name)}</h3><p style="margin:0">${esc(p.line)}</p><dl><dt>Where</dt><dd>${esc(p.area)}</dd>${has(p.when)?`<dt>When</dt><dd>${esc(p.when)}</dd>`:''}</dl><a class="btn" href="#${slug(p)}">See this trip ${ARROW}</a></div>`;
   $('#mapChips').innerHTML=places.map(x=>`<button class="mchip" data-id="${x.id}" aria-pressed="${x.id===sel}">${esc(x.name)}</button>`).join('')};
 const pick=e=>{const g=e.target.closest('[data-id]');if(g){sel=g.dataset.id;drawMap()}};
 svg.addEventListener('click',pick);$('#mapChips').addEventListener('click',pick);
