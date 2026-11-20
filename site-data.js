@@ -58,7 +58,8 @@ window.SITE = {
       photo: '', story: '' },
     { name: 'Madera Canyon', kind: 'mountains', area: 'Santa Rita Mountains, south of Tucson',
       line: 'Shady trails and birdsong in the Santa Ritas.', lat: 31.72, lon: -110.88,
-      photo: '', story: '' },
+      photo: 'photos/madera-couple.jpg', story: '',
+      photos: ['photos/madera-trail-kids.jpg', 'photos/madera-bridge-kids.jpg', 'photos/madera-creek.jpg', 'photos/madera-laughing.jpg', 'photos/madera-hair-flip.jpg'] },
     { name: 'Pinetop', kind: 'mountains', area: 'White Mountains, northeastern Arizona',
       line: 'Summer in the cool ponderosa pines.', lat: 34.14, lon: -109.96,
       photo: 'photos/family-picnic-2.jpg', story: '' },
@@ -87,6 +88,9 @@ window.SITE = {
        { youtube: 'dQw4w9WgXcQ', caption: 'Grand Canyon day' },   (the code after v= in a YouTube link)
      While this list is empty, the site shows the paintings instead. */
   gallery: [
+    { photo: 'photos/madera-couple.jpg', caption: 'Fall colours in Madera Canyon' },
+    { photo: 'photos/madera-bridge-kids.jpg', caption: 'Watching the creek, Madera Canyon' },
+    { photo: 'photos/madera-trail-kids.jpg', caption: 'Little explorers on the trail' },
     { photo: 'photos/lemmon-tent-pines.jpg', caption: 'Our campsite on Mount Lemmon' },
     { video: 'videos/lemmon-hammock.mp4', caption: 'Hammock time on Mount Lemmon' },
     { photo: 'photos/lemmon-shoulders.jpg', caption: 'The best seat on Mount Lemmon' },
