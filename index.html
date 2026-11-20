@@ -76,9 +76,8 @@ nav a:hover{opacity:1;color:var(--gold)}
 .heroText{position:relative;z-index:1;padding-bottom:clamp(40px,7vw,88px);width:100%}
 .hero h1{font-size:clamp(48px,7.6vw,108px);line-height:1;max-width:10ch;margin-bottom:.25em}
 .hero p{font-size:clamp(18px,1.6vw,21px);max-width:34ch;color:#f3e2d0}
-.facts{display:flex;flex-wrap:wrap;gap:clamp(20px,5vw,64px);margin-top:28px}
-.facts b{display:block;font-weight:600;font-family:"Fraunces",Georgia,serif;font-size:clamp(32px,3.4vw,42px);line-height:1;color:var(--gold)}
-.facts span{font-size:14px;color:#e8d6c3}
+/* trip type colours (map pins, key and filters) */
+:root{--k-mountains:#e6a93a;--k-lakes:#86b8b4;--k-parks:#d9692a}
 
 /* about */
 .intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(28px,6vw,96px);align-items:start}
@@ -88,6 +87,12 @@ nav a:hover{opacity:1;color:var(--gold)}
 
 /* trips: journal entries, newest first */
 .head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px;margin-bottom:clamp(40px,6vw,72px)}
+.kchips{display:flex;flex-wrap:wrap;gap:10px;margin:calc(clamp(40px,6vw,72px) * -0.5) 0 clamp(40px,6vw,72px)}
+.kchip{display:inline-flex;align-items:baseline;gap:10px;min-height:52px;padding:8px 20px;border-radius:999px;border:1px solid var(--line);background:rgba(246,234,219,.03);color:var(--cream);cursor:pointer;font-size:15px;transition:border-color .2s,background .2s}
+.kchip b{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:26px;line-height:1;color:var(--kc,var(--gold))}
+.kchip:hover{border-color:var(--mist)}
+.kchip[aria-pressed=true]{background:var(--cream);border-color:var(--cream);color:#2b1d15}
+.kchip[aria-pressed=true] b{color:#2b1d15}
 .journal{display:grid;gap:clamp(48px,7vw,96px)}
 .entry{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:center;text-decoration:none;color:inherit}
 .entry:nth-child(even) .ePic{order:2}
@@ -114,6 +119,13 @@ nav a:hover{opacity:1;color:var(--gold)}
 .pin:hover .halo,.pin:focus-visible .halo{opacity:.18}
 .pin .dot{fill:var(--night);stroke:var(--gold);stroke-width:4}
 .pin.on .dot{fill:var(--gold)}
+.pin.k-mountains{--kc:var(--k-mountains)}.pin.k-lakes{--kc:var(--k-lakes)}.pin.k-parks{--kc:var(--k-parks)}
+.pin .dot{stroke:var(--kc,var(--gold))}.pin.on .dot{fill:var(--kc,var(--gold))}.pin .halo{fill:var(--kc,var(--orange))}
+.mkey{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;margin:0 0 18px;font-size:15px;color:var(--mist)}
+.mkey .total{color:var(--cream);font-size:17px;flex-basis:100%}
+.mkey .total b{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:28px;color:var(--gold);margin-right:6px;vertical-align:-2px}
+.dotk{display:inline-block;width:14px;height:14px;border-radius:50%;border:3px solid var(--kc);margin-right:7px;vertical-align:-2px}
+.k-mountains{--kc:var(--k-mountains)}.k-lakes{--kc:var(--k-lakes)}.k-parks{--kc:var(--k-parks)}
 .pin text{font:600 28px "Literata",Georgia,serif;fill:var(--cream);paint-order:stroke;stroke:var(--night);stroke-width:8px}
 .pin.home .dot{fill:var(--cream);stroke:none}
 .box{fill:none;stroke:var(--cream);stroke-opacity:.5;stroke-width:2;stroke-dasharray:8 6}.lead{stroke:var(--cream);stroke-opacity:.35;stroke-width:2;stroke-dasharray:8 6}
@@ -229,7 +241,8 @@ dialog.lb::backdrop{background:rgba(10,7,5,.9)}
   .tFacts{position:static}
 }
 @media(max-width:600px){
-  .wide-only{display:none}nav a{padding:10px 8px}.brand span{display:none}
+  .wide-only{display:none}nav a{padding:10px 6px;font-size:14px}
+  .kchips{gap:8px}.kchip{min-height:44px;padding:6px 14px;font-size:14px;gap:7px}.kchip b{font-size:20px}.brand span{display:none}
   .bar{flex-wrap:wrap;gap:0 12px;padding-block:6px}nav.scroll{order:3;width:100%;margin-left:-10px}
   .masonry{columns:2;column-gap:10px}.masonry figure{margin-bottom:12px}.masonry figcaption{font-size:13px}
   .tNav{grid-template-columns:minmax(0,1fr)}.tnav:last-child:not(:first-child){flex-direction:row;text-align:left}
@@ -261,7 +274,6 @@ dialog.lb::backdrop{background:rgba(10,7,5,.9)}
   <div class="heroText wrap">
     <h1 id="heroTitle">The Obih Adventures</h1>
     <p id="heroLine"></p>
-    <div class="facts" id="facts"></div>
   </div>
 </section>
 
@@ -275,6 +287,7 @@ dialog.lb::backdrop{background:rgba(10,7,5,.9)}
 <section class="band topo" id="places">
   <div class="wrap">
     <div class="head"><div><h2>Where we've been</h2><p class="soft" style="margin:0">Pick a place to see more.</p></div></div>
+    <div class="kchips" id="kChips" role="group" aria-label="Show trips by type"></div>
     <div class="journal" id="journal"></div>
     <div class="gmore"><button class="btn ghost" id="jMore" hidden></button></div>
   </div>
@@ -285,6 +298,7 @@ dialog.lb::backdrop{background:rgba(10,7,5,.9)}
     <div>
       <h2>Our Arizona map</h2>
       <p class="soft">From home in Tucson to the Colorado River and up to the Grand Canyon.</p>
+      <div class="mkey" id="mapKey"></div>
       <svg id="mapSvg" viewBox="0 0 1560 1120" role="group" aria-label="Map of Arizona with the places we have visited"></svg>
       <div class="mchips" id="mapChips" role="group" aria-label="Places"></div>
     </div>
@@ -457,14 +471,21 @@ $('#aboutText').innerHTML=S.about.map((t,i)=>`<p class="${i?'soft':'lead'}">${es
 
 /* counts */
 const nk=k=>places.filter(p=>p.kind===k).length;
-$('#facts').innerHTML=[[places.length,'places'],[nk('mountains'),'mountains & canyons'],[nk('lakes'),'lakes & state parks'],[nk('parks'),nk('parks')===1?'national park':'national parks']].filter(x=>x[0]).map(([n,l])=>`<div><b>${n}</b><span>${l}</span></div>`).join('');
+const KLAB={mountains:'mountains & canyons',lakes:'lakes & state parks',parks:'national park'};
+const kinds=Object.keys(KIND).filter(k=>nk(k));
+let jKind='all';
+$('#kChips').innerHTML=[['all',places.length,'places']].concat(kinds.map(k=>[k,nk(k),k==='parks'&&nk(k)>1?'national parks':KLAB[k]])).map(([k,n,l])=>`<button class="kchip${k==='all'?'':' k-'+k}" data-k="${k}" aria-pressed="${k==='all'}"><b>${n}</b>${esc(l)}</button>`).join('');
+$('#kChips').addEventListener('click',e=>{const b=e.target.closest('[data-k]');if(!b)return;jKind=b.dataset.k;
+  $('#kChips').querySelectorAll('[data-k]').forEach(x=>x.setAttribute('aria-pressed',x===b));renderJ()});
+$('#mapKey').innerHTML=`<span class="total"><b>${places.length}</b>places across Arizona</span>`+kinds.map(k=>`<span><i class="dotk k-${k}"></i>${esc(KIND[k])}</span>`).join('');
 
 /* trips as journal entries, newest first */
 const JMAX=5;let jOpen=false;
 const entry=(p,k)=>{const m=mediaOf[p.id],th=m.filter(g=>g.photo&&g.photo!==p.photo).slice(0,3),rest=m.length-(p.photo?1:0)-th.length;
   return `<a class="entry" href="#${slug(p)}"><span class="ePic">${pic(p,'j'+k,false)}</span><span class="eText"><span class="kick">${esc(KIND[p.kind])}${has(p.when)?' · '+esc(p.when):''}</span><h3>${esc(p.name)}</h3><span class="area">${esc(p.area)}</span>${p.line?`<span class="ln">${esc(p.line)}</span>`:''}${th.length?`<span class="eThumbs">${th.map(g=>im(g.photo,'',true)).join('')}${rest>0?`<span class="eCount">+${rest} more</span>`:''}</span>`:''}<span class="more">Read our story ${ARROW}</span></span></a>`};
-const renderJ=()=>{$('#journal').innerHTML=(jOpen?order:order.slice(0,JMAX)).map(entry).join('');
-  const b=$('#jMore');b.hidden=jOpen||order.length<=JMAX;b.textContent=`See all ${order.length} trips`};
+const renderJ=()=>{const list=jKind==='all'?order:order.filter(p=>p.kind===jKind),all=jOpen||jKind!=='all';
+  $('#journal').innerHTML=(all?list:list.slice(0,JMAX)).map(entry).join('');
+  const b=$('#jMore');b.hidden=all||list.length<=JMAX;b.textContent=`See all ${list.length} trips`};
 $('#jMore').addEventListener('click',()=>{jOpen=true;renderJ();$('#journal').children[JMAX]?.focus()});
 renderJ();
 
@@ -474,7 +495,7 @@ const P=([lon,lat])=>[((lon+115.3)*166).toFixed(0),((37.4-lat)*165+20).toFixed(0
 const Q=([lon,lat])=>[(1090+(lon+111.25)*562).toFixed(0),(570+(32.6-lat)*416).toFixed(0)];
 let sel=order[0]?.id;
 const svg=$('#mapSvg');
-const pin=(p,[x,y],lab)=>{const[dx,dy,an]=p.lab;return `<g class="pin${p.id===sel?' on':''}" tabindex="0" role="button" aria-label="${esc(p.name)}" data-id="${p.id}" transform="translate(${x} ${y})"><circle class="halo" r="${lab?34:20}"/><circle class="dot" r="${lab?12:7}"/>${lab?`<text x="${dx}" y="${dy}" text-anchor="${an}">${esc(p.name)}</text>`:''}</g>`};
+const pin=(p,[x,y],lab)=>{const[dx,dy,an]=p.lab;return `<g class="pin k-${p.kind}${p.id===sel?' on':''}" tabindex="0" role="button" aria-label="${esc(p.name)}" data-id="${p.id}" transform="translate(${x} ${y})"><circle class="halo" r="${lab?34:20}"/><circle class="dot" r="${lab?12:7}"/>${lab?`<text x="${dx}" y="${dy}" text-anchor="${an}">${esc(p.name)}</text>`:''}</g>`};
 const drawMap=()=>{if(!places.length)return;const h=P([-110.97,32.22]),hq=Q([-110.97,32.22]),a=P([-111.25,32.6]),b=P([-110.45,31.35]);
   svg.innerHTML=`<path class="az" d="M${AZ.map(p=>P(p).join(' ')).join(' L')}Z"/>`+
   `<rect x="${a[0]}" y="${a[1]}" width="${b[0]-a[0]}" height="${b[1]-a[1]}" class="box"/><path d="M${b[0]} ${a[1]} L1090 570" class="lead"/>`+
