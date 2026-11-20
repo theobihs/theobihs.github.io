@@ -48,7 +48,8 @@ window.SITE = {
   places: [
     { name: 'Mount Lemmon', kind: 'mountains', area: 'Santa Catalina Mountains, above Tucson',
       line: 'Cool pine forest an hour up the mountain from home.', lat: 32.44, lon: -110.79,
-      photo: '', story: '' },
+      photo: 'photos/lemmon-tent-pines.jpg', story: '',
+      photos: ['photos/lemmon-family-aspens.jpg', 'photos/lemmon-shoulders.jpg', 'photos/lemmon-silly-pose.jpg', 'photos/lemmon-selfie-view.jpg', 'photos/lemmon-campsite.jpg', 'photos/lemmon-hammock.jpg', 'photos/lemmon-mug.jpg', 'photos/lemmon-pines-up.jpg', 'photos/lemmon-vista.jpg', 'photos/lemmon-clouds.jpg', 'photos/lemmon-chairlift.jpg', 'photos/lemmon-selfie-view-2.jpg'] },
     { name: 'Grand Canyon', kind: 'parks', area: 'Northern Arizona',
       line: 'Standing at the rim together.', lat: 36.06, lon: -112.11,
       photo: '', story: '' },
@@ -86,6 +87,11 @@ window.SITE = {
        { youtube: 'dQw4w9WgXcQ', caption: 'Grand Canyon day' },   (the code after v= in a YouTube link)
      While this list is empty, the site shows the paintings instead. */
   gallery: [
+    { photo: 'photos/lemmon-tent-pines.jpg', caption: 'Our campsite on Mount Lemmon' },
+    { video: 'videos/lemmon-hammock.mp4', caption: 'Hammock time on Mount Lemmon' },
+    { photo: 'photos/lemmon-shoulders.jpg', caption: 'The best seat on Mount Lemmon' },
+    { photo: 'photos/lemmon-clouds.jpg', caption: 'Above the clouds, Mount Lemmon' },
+    { photo: 'photos/lemmon-silly-pose.jpg', caption: 'Copying Daddy' },
     { photo: 'photos/roper-buoys-glow.jpg', caption: 'Last light on Roper Lake' },
     { photo: 'photos/roper-porch-swing.jpg', caption: 'Porch swing at sunset' },
     { photo: 'photos/roper-cabins-sunset.jpg', caption: 'Roper Lake cabins' },
