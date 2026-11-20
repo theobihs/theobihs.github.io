@@ -284,9 +284,9 @@ const scene=(kind,uid,v=0)=>{
   return s+'</svg>'};
 
 const S=Object.assign({title:'The Obih Adventures',tagline:'',heroVideo:'',heroPhoto:'',about:[],familyPhoto:'',places:[],gallery:[],bucketList:[],guestbookLink:''},window.SITE||{});
-const ART={'Mount Lemmon':['pines',0],'Grand Canyon':['canyon',0],'Sabino Canyon':['creek',0],'Madera Canyon':['pines',1],'Lost Dutchman':['spire',0],'Lake Havasu':['lake',0],'Alamo Lake':['lake',1],'Roper Lake':['lake',2],'Patagonia Lake':['lake',3]};
+const ART={'Mount Lemmon':['pines',0],'Grand Canyon':['canyon',0],'Sabino Canyon':['creek',0],'Madera Canyon':['pines',1],'Lost Dutchman':['spire',0],'Sedona':['spire',0],'Lake Havasu':['lake',0],'Alamo Lake':['lake',1],'Roper Lake':['lake',2],'Patagonia Lake':['lake',3]};
 const DEF={mountains:['pines',1],lakes:['lake',3],parks:['canyon',0]};
-const LAB={'Grand Canyon':[0,-30,'middle'],'Lake Havasu':[0,-28,'start'],'Alamo Lake':[0,48,'middle'],'Roper Lake':[-22,-26,'end'],'Lost Dutchman':[22,8,'start']};
+const LAB={'Sedona':[22,-14,'start'],'Grand Canyon':[0,-30,'middle'],'Lake Havasu':[0,-28,'start'],'Alamo Lake':[0,48,'middle'],'Roper Lake':[-22,-26,'end'],'Lost Dutchman':[22,8,'start']};
 const places=S.places.map((p,i)=>{const kind=KIND[p.kind]?p.kind:'lakes',lat=+p.lat,lon=+p.lon;return {...p,kind,lat,lon,id:'p'+i,line:p.line||'',area:p.area||'',art:ART[p.name]||DEF[kind],lab:LAB[p.name]||[20,8,'start'],near:lon>-111.25&&lon<-110.45&&lat>31.35&&lat<32.6}});
 const pic=(p,uid)=>p.photo?`<img src="${esc(p.photo)}" alt="${esc(p.name)}" loading="lazy">`:scene(p.art[0],uid,p.art[1]);
 const paras=t=>String(t||'').split(/\n\s*\n/).filter(Boolean).map(x=>`<p>${esc(x)}</p>`).join('');
