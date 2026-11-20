@@ -83,6 +83,17 @@ For older photos, sharing them by email or AirDrop to yourself usually turns the
 2. Click **Send**, then the link icon, and copy the link.
 3. Paste it into `guestbookLink: ''` in `site-data.js`. The guestbook section and button appear automatically.
 
+## Trip stories, dates and campground reviews
+
+Each place in `site-data.js` has empty slots: `when`, `journey`, `campsite`, `experience`, `moments`.
+Type into any of them and that part appears in the trip's pop-up; empty ones stay hidden.
+A campground review template (ratings 1 to 5) is in the notes at the top of the places list.
+
+## Photos sorted by trip
+
+The Photos section sorts gallery pictures into trips by itself. If one ends up under the wrong
+trip, add `trip: 'Place name'` to its line.
+
 ## Adding a new place
 
 Copy one whole `{ name: ... },` block in `places`, paste it below, and change the details.

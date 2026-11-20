@@ -44,51 +44,76 @@ window.SITE = {
             story: `We drove up early.
 
             The kids found pinecones everywhere.`,
+
+     OPTIONAL TRIP STORY (each part only shows on the site once you fill it in):
+       when:       when you went, any wording, e.g. 'October 2025' or 'Three visits, 2024 to 2025'
+       journey:    what prompted the trip and what the drive was like
+       campsite:   where you stayed and what the campground was like
+       experience: what you did and explored
+       moments:    favourite family moments, funny or unexpected ones
+     Use backticks ` ` for several paragraphs, same as story.
+
+     OPTIONAL CAMPGROUND REVIEW: paste this inside a place, after the moments line,
+     and give each a number from 1 to 5 (leave out any you don't want):
+       review: { campground: 'Name of campground', location: 5, facilities: 4, scenery: 5,
+                 family: 5, overall: 5, again: 'Yes', notes: 'A few words about it.' },
+
      To add a place, copy one { ... }, block, paste it below, and change it. */
   places: [
     { name: 'Mount Lemmon', kind: 'mountains', area: 'Santa Catalina Mountains, above Tucson',
       line: 'Cool pine forest an hour up the mountain from home.', lat: 32.44, lon: -110.79,
       photo: 'photos/lemmon-tent-pines.jpg', story: '',
+      when: '', journey: '', campsite: '', experience: '', moments: '',
       photos: ['photos/lemmon-family-aspens.jpg', 'photos/lemmon-shoulders.jpg', 'photos/lemmon-silly-pose.jpg', 'photos/lemmon-selfie-view.jpg', 'photos/lemmon-campsite.jpg', 'photos/lemmon-hammock.jpg', 'photos/lemmon-mug.jpg', 'photos/lemmon-pines-up.jpg', 'photos/lemmon-vista.jpg', 'photos/lemmon-clouds.jpg', 'photos/lemmon-chairlift.jpg', 'photos/lemmon-selfie-view-2.jpg'] },
     { name: 'Grand Canyon', kind: 'parks', area: 'Northern Arizona',
       line: 'Standing at the rim together.', lat: 36.06, lon: -112.11,
       photo: 'photos/gc-rim-view.jpg', story: '',
+      when: '', journey: '', campsite: '', experience: '', moments: '',
       photos: ['photos/gc-rim-pose.jpg', 'photos/gc-sunset-family.jpg', 'photos/gc-sunset-mom.jpg', 'photos/gc-sunset-shoulders.jpg', 'photos/gc-sunset-arms.jpg'] },
     { name: 'Sedona', kind: 'mountains', area: 'Red Rock Country, north-central Arizona',
       line: 'Red rocks and blue skies. We keep coming back.', lat: 34.87, lon: -111.76,
       photo: 'photos/sedona-red-rocks.jpg', story: '',
+      when: '', journey: '', campsite: '', experience: '', moments: '',
       photos: ['photos/sedona-golden-cliffs.jpg', 'photos/sedona-bell-rock.jpg', 'photos/sedona-bell-rock-2.jpg', 'photos/sedona-drive.jpg'] },
     { name: 'Sabino Canyon', kind: 'mountains', area: 'Coronado National Forest, northeast Tucson',
       line: 'Desert canyon, creek and saguaros on the edge of town.', lat: 32.31, lon: -110.82,
       photo: 'photos/sabino-creek-wade.jpg', story: '',
+      when: '', journey: '', campsite: '', experience: '', moments: '',
       photos: ['photos/sabino-creek-rest.jpg'] },
     { name: 'Madera Canyon', kind: 'mountains', area: 'Santa Rita Mountains, south of Tucson',
       line: 'Shady trails and birdsong in the Santa Ritas.', lat: 31.72, lon: -110.88,
       photo: 'photos/madera-couple.jpg', story: '',
+      when: '', journey: '', campsite: '', experience: '', moments: '',
       photos: ['photos/madera-trail-kids.jpg', 'photos/madera-bridge-kids.jpg', 'photos/madera-creek.jpg', 'photos/madera-laughing.jpg', 'photos/madera-hair-flip.jpg'] },
     { name: 'Pinetop', kind: 'mountains', area: 'White Mountains, northeastern Arizona',
       line: 'Summer in the cool ponderosa pines.', lat: 34.14, lon: -109.96,
       photo: 'photos/pinetop-family-pines.jpg', story: '',
+      when: '', journey: '', campsite: '', experience: '', moments: '',
       photos: ['photos/pinetop-bridge-family.jpg', 'photos/pinetop-pattycake.jpg', 'photos/pinetop-shoulders.jpg', 'photos/pinetop-lake-explorer.jpg', 'photos/pinetop-dock.jpg', 'photos/pinetop-blanket.jpg', 'photos/pinetop-shoulders-side.jpg', 'photos/pinetop-silly-face.jpg', 'photos/pinetop-lake-geese.jpg', 'photos/pinetop-tall-pines.jpg', 'photos/pinetop-lake-clouds.jpg', 'photos/pinetop-meadow-sky.jpg', 'photos/family-picnic-2.jpg', 'photos/family-picnic-1.jpg'] },
     { name: 'Dead Horse Ranch', kind: 'lakes', area: 'Dead Horse Ranch State Park, Cottonwood',
       line: 'A cabin stay by the Verde River, with cottonwoods, pines and creek splashing.', lat: 34.76, lon: -112.02,
       photo: 'photos/deadhorse-cabin-family.jpg', story: '',
+      when: '', journey: '', campsite: '', experience: '', moments: '',
       photos: ['photos/deadhorse-creek-splash.jpg', 'photos/deadhorse-river-carry.jpg', 'photos/deadhorse-river-log.jpg', 'photos/deadhorse-cottonwoods.jpg', 'photos/deadhorse-pines-pose.jpg', 'photos/deadhorse-pines-seated.jpg', 'photos/deadhorse-trail-sign.jpg', 'photos/deadhorse-cabin-family-2.jpg'] },
     { name: 'Lake Havasu', kind: 'lakes', area: 'Lake Havasu State Park, Lake Havasu City',
       line: 'A cabin stay on the Colorado River, with sunsets on the beach and a boat ride through the canyon.', lat: 34.50, lon: -114.36,
       photo: 'photos/havasu-sunset-chairs.jpg', story: '',
+      when: '', journey: '', campsite: '', experience: '', moments: '',
       photos: ['photos/havasu-shore-walk.jpg', 'photos/havasu-beach-pjs.jpg', 'photos/havasu-sunset-buoys.jpg', 'photos/havasu-cabin.jpg', 'photos/havasu-boat-dad.jpg', 'photos/havasu-canyon-cove.jpg', 'photos/havasu-phone-booth.jpg'] },
     { name: 'Alamo Lake', kind: 'lakes', area: 'Alamo Lake State Park, near Wenden',
       line: 'A cabin stay on quiet water, far from everything.', lat: 34.23, lon: -113.58,
       photo: 'photos/alamo-chairs.jpg', story: '',
+      when: '', journey: '', campsite: '', experience: '', moments: '',
       photos: ['photos/alamo-family-view.jpg', 'photos/alamo-sunset-joy.jpg', 'photos/alamo-cabin-porch-2.jpg', 'photos/alamo-reflection.jpg', 'photos/alamo-shoulders.jpg', 'photos/alamo-road-pose.jpg', 'photos/alamo-road-mom.jpg', 'photos/alamo-road-dad.jpg', 'photos/alamo-sunset-family.jpg', 'photos/alamo-cabin-porch.jpg', 'photos/alamo-dawn.jpg'] },
     { name: 'Roper Lake', kind: 'lakes', area: 'Roper Lake State Park, near Safford',
       line: 'A lakeside cabin stay under Mount Graham.', lat: 32.76, lon: -109.70,
       photo: 'photos/roper-lake-overlook.jpg', story: '',
+      when: '', journey: '', campsite: '', experience: '', moments: '',
       photos: ['photos/roper-family-selfie.jpg', 'photos/roper-braids.jpg', 'photos/roper-hug-lake.jpg', 'photos/roper-porch-couple.jpg', 'photos/roper-swing-mom.jpg', 'photos/roper-swing-dad.jpg', 'photos/roper-swing-view.jpg', 'photos/roper-breakfast.jpg', 'photos/roper-walk.jpg', 'photos/roper-sign.jpg', 'photos/roper-overlook.jpg', 'photos/roper-selfie-mountains.jpg', 'photos/roper-buoys-glow.jpg', 'photos/roper-porch-swing.jpg', 'photos/roper-cabins-sunset.jpg', 'photos/roper-reeds-sunset.jpg', 'photos/roper-blue-hour.jpg', 'photos/roper-road-dusk.jpg', 'photos/cabin-porch.jpg', 'photos/hero-lake.jpg'] },
     { name: 'Patagonia Lake', kind: 'lakes', area: 'Patagonia Lake State Park, south of Tucson',
       line: 'A lake tucked into the grassland hills near the border.', lat: 31.49, lon: -110.85,
       photo: 'photos/patagonia-panorama.jpg', story: '',
+      when: '', journey: '', campsite: '', experience: '', moments: '',
       photos: ['photos/patagonia-selfie.jpg', 'photos/patagonia-dad-rock.jpg', 'photos/patagonia-tree-boat.jpg', 'photos/patagonia-dad-tree.jpg', 'photos/patagonia-table-stand.jpg', 'photos/patagonia-mom-baby.jpg', 'photos/patagonia-glasses.jpg', 'photos/patagonia-mom-kayak.jpg', 'photos/patagonia-bridge.jpg', 'photos/patagonia-table-wide.jpg', 'photos/patagonia-selfie-2.jpg', 'photos/patagonia-reflection.jpg', 'photos/patagonia-sign.jpg'] },
   ],
 
@@ -97,6 +122,10 @@ window.SITE = {
        { photo: 'photos/havasu-sunset.jpg', caption: 'Lake Havasu' },
        { video: 'videos/dunes.mp4', caption: 'Sledding' },        (short clips, under 25 MB)
        { youtube: 'dQw4w9WgXcQ', caption: 'Grand Canyon day' },   (the code after v= in a YouTube link)
+     The site sorts these by trip on its own (from the place's photo list, the place
+     name in the caption, or the start of the file name). If one lands in the wrong
+     place, add trip: 'Place name', e.g.
+       { photo: 'photos/IMG_5.JPG', caption: 'Morning coffee', trip: 'Roper Lake' },
      While this list is empty, the site shows the paintings instead. */
   gallery: [
     { photo: 'photos/patagonia-panorama.jpg', caption: 'Big skies over Patagonia Lake' },
