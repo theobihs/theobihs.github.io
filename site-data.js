@@ -13,7 +13,7 @@
 window.SITE = {
 
   title: 'The Obih Adventures',
-  tagline: 'Mountains, lakes and canyons across Arizona, and the family time in between.',
+  tagline: '',   /* optional line under the title on the opening screen; leave '' for none */
 
   /* Opening screen.
      heroPhotos: one or more photos. With several, they fade slowly from one

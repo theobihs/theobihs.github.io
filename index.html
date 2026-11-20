@@ -81,7 +81,7 @@ nav a:hover{opacity:1;color:var(--gold)}
 .heroText{position:relative;z-index:1;padding-bottom:clamp(40px,7vw,88px);width:100%}
 .hero h1{font-size:clamp(60px,11vw,148px);line-height:.9;max-width:9ch;margin-bottom:.2em}
 .hero p{font-size:clamp(18px,1.6vw,21px);max-width:34ch;color:#f3e2d0}
-.facts{display:flex;flex-wrap:wrap;gap:clamp(20px,5vw,64px);margin-top:28px;padding-top:22px;border-top:1px solid rgba(246,234,219,.25)}
+.facts{display:flex;flex-wrap:wrap;gap:clamp(20px,5vw,64px);margin-top:28px}
 .facts b{display:block;font-family:"Big Shoulders Display",sans-serif;font-size:clamp(36px,4vw,48px);line-height:1;color:var(--gold)}
 .facts span{font-size:14px;color:#e8d6c3}
 
@@ -309,7 +309,7 @@ const LAB={'Grand Canyon':[0,-30,'middle'],'Lake Havasu':[0,-28,'start'],'Alamo 
 const places=S.places.map((p,i)=>{const kind=KIND[p.kind]?p.kind:'lakes',lat=+p.lat,lon=+p.lon;return {...p,kind,lat,lon,id:'p'+i,line:p.line||'',area:p.area||'',art:ART[p.name]||DEF[kind],lab:LAB[p.name]||[20,8,'start'],near:lon>-111.25&&lon<-110.45&&lat>31.35&&lat<32.6}});
 const pic=(p,uid)=>p.photo?`<img src="${esc(p.photo)}" alt="${esc(p.name)}" loading="lazy">`:scene(p.art[0],uid,p.art[1]);
 const paras=t=>String(t||'').split(/\n\s*\n/).filter(Boolean).map(x=>`<p>${esc(x)}</p>`).join('');
-document.title=S.title;$('#heroTitle').textContent=S.title;$('#heroLine').textContent=S.tagline;
+document.title=S.title;$('#heroTitle').textContent=S.title;$('#heroLine').textContent=S.tagline;$('#heroLine').hidden=!S.tagline;
 $('#aboutText').innerHTML=S.about.map((t,i)=>`<p class="${i?'soft':'lead'}">${esc(t)}</p>`).join('')+(S.familyPhoto?`<img class="fam" src="${esc(S.familyPhoto)}" alt="The Obih family">`:'')+'<div class="sig">The Obih family</div>';
 
 /* hero art: big canyon at golden hour */
