@@ -16,10 +16,10 @@ window.SITE = {
   /* Opening screen words. Leave any of them '' to hide it.
      headline: the big words. If '', the site name is shown big instead.
      intro:    a short line under the headline.
-     button:   the button that takes visitors to the trips. */
-  headline: 'Making Memories, One Adventure at a Time.',
-  intro: "Our family's digital scrapbook and camping journal.",
-  button: 'Explore Our Adventures',
+     button:   (not used in this design) */
+  headline: '',
+  intro: '',
+  button: '',
   tagline: '',   /* older setting, used only if intro is '' */
 
   /* Opening screen.
