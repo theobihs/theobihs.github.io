@@ -14,12 +14,12 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%2318120e'/%3E%3Ccircle cx='20' cy='20' r='16.5' fill='none' stroke='%23e6a93a' stroke-width='2'/%3E%3Cpath d='M8 27 L15.5 17 L20 22 L26 14 L32 27Z' fill='%23e6a93a'/%3E%3Ccircle cx='26.5' cy='11.5' r='2.6' fill='%23e6a93a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
 <style>
 /* VOICE: premium travel editorial, calm to explore: big pictures, few words, lots of air.
    IDEA: an autumn field guide to the places our family has been, printed on dark topo paper.
    PICTURE: our own photos, full-bleed; each trip has its own page like a chapter in a journal.
-   COLOUR and TYPE: dark earth ground with topo lines, warm paper bands; burnt orange, gold, maple. Fraunces headings + DM Sans.
+   COLOUR and TYPE: dark earth ground with topo lines, warm paper bands; burnt orange, gold, maple. Fraunces headings, Literata for reading text, DM Sans for labels.
    LAYOUT: full-screen opening, then one idea per band: about, trips (journal entries), map, photos by trip, bucket list, guestbook, footer. */
 :root{color-scheme:dark;--night:#18120e;--earth:#221912;--paper:#f8efe3;--ink:#2b1d15;--cream:#f6eadb;--mist:#c9b5a2;
   --orange:#d9692a;--gold:#e6a93a;--maple:#9b3220;--brown:#7a6252;--line:rgba(246,234,219,.14)}
@@ -29,6 +29,9 @@ body{margin:0;background:var(--night);color:var(--cream);font:17px/1.65 "DM Sans
 h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:600;line-height:1.08;letter-spacing:-.01em;text-wrap:balance;margin:0 0 .35em}
 h2{font-size:clamp(34px,4.4vw,52px)}h3{font-size:26px}
 p{margin:0 0 1em;max-width:60ch}
+/* reading text in Literata; labels, buttons, dates and menus stay in DM Sans */
+p,.eText .ln,.masonry figcaption,.lbCap #lbCap,.list li{font-family:"Literata",Georgia,serif}
+.btn,.kick,.small,.soft.small{font-family:"DM Sans",system-ui,sans-serif}
 a{color:inherit;text-underline-offset:4px}
 html{scroll-padding-top:68px;scroll-behavior:smooth}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
