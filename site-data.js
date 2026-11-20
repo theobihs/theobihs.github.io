@@ -76,7 +76,7 @@ window.SITE = {
     { name: 'Roper Lake', kind: 'lakes', area: 'Roper Lake State Park, near Safford',
       line: 'A lakeside cabin stay under Mount Graham.', lat: 32.76, lon: -109.70,
       photo: 'photos/roper-lake-overlook.jpg', story: '',
-      photos: ['photos/roper-buoys-glow.jpg', 'photos/roper-porch-swing.jpg', 'photos/roper-cabins-sunset.jpg', 'photos/roper-reeds-sunset.jpg', 'photos/roper-blue-hour.jpg', 'photos/roper-road-dusk.jpg', 'photos/cabin-porch.jpg', 'photos/hero-lake.jpg'] },
+      photos: ['photos/roper-family-selfie.jpg', 'photos/roper-braids.jpg', 'photos/roper-hug-lake.jpg', 'photos/roper-porch-couple.jpg', 'photos/roper-swing-mom.jpg', 'photos/roper-swing-dad.jpg', 'photos/roper-swing-view.jpg', 'photos/roper-breakfast.jpg', 'photos/roper-walk.jpg', 'photos/roper-sign.jpg', 'photos/roper-overlook.jpg', 'photos/roper-selfie-mountains.jpg', 'photos/roper-buoys-glow.jpg', 'photos/roper-porch-swing.jpg', 'photos/roper-cabins-sunset.jpg', 'photos/roper-reeds-sunset.jpg', 'photos/roper-blue-hour.jpg', 'photos/roper-road-dusk.jpg', 'photos/cabin-porch.jpg', 'photos/hero-lake.jpg'] },
     { name: 'Patagonia Lake', kind: 'lakes', area: 'Patagonia Lake State Park, south of Tucson',
       line: 'A lake tucked into the grassland hills near the border.', lat: 31.49, lon: -110.85,
       photo: '', story: '' },
@@ -89,6 +89,13 @@ window.SITE = {
        { youtube: 'dQw4w9WgXcQ', caption: 'Grand Canyon day' },   (the code after v= in a YouTube link)
      While this list is empty, the site shows the paintings instead. */
   gallery: [
+    { photo: 'photos/roper-braids.jpg', caption: 'Hair braiding by Roper Lake' },
+    { video: 'videos/roper-cabins-sunset.mp4', caption: 'Sunset over the Roper Lake cabins' },
+    { photo: 'photos/roper-porch-couple.jpg', caption: 'Golden hour on the cabin porch' },
+    { photo: 'photos/roper-hug-lake.jpg', caption: 'Hugs by the water' },
+    { video: 'videos/roper-lakeside.mp4', caption: 'Evening light on Roper Lake' },
+    { photo: 'photos/roper-sign.jpg', caption: 'Reading the trail sign above Roper Lake' },
+    { video: 'videos/roper-cabin-inside.mp4', caption: 'Inside our cabin' },
     { photo: 'photos/pinetop-family-pines.jpg', caption: 'Summer in the pines at Pinetop' },
     { video: 'videos/pinetop-walk.mp4', caption: 'A walk through the Pinetop forest' },
     { photo: 'photos/pinetop-pattycake.jpg', caption: 'Patty-cake on the picnic blanket' },
