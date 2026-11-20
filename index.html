@@ -477,7 +477,7 @@ let jKind='all';
 $('#kChips').innerHTML=[['all',places.length,'places']].concat(kinds.map(k=>[k,nk(k),k==='parks'&&nk(k)>1?'national parks':KLAB[k]])).map(([k,n,l])=>`<button class="kchip${k==='all'?'':' k-'+k}" data-k="${k}" aria-pressed="${k==='all'}"><b>${n}</b>${esc(l)}</button>`).join('');
 $('#kChips').addEventListener('click',e=>{const b=e.target.closest('[data-k]');if(!b)return;jKind=b.dataset.k;
   $('#kChips').querySelectorAll('[data-k]').forEach(x=>x.setAttribute('aria-pressed',x===b));renderJ()});
-$('#mapKey').innerHTML=`<span class="total"><b>${places.length}</b>places across Arizona</span>`+kinds.map(k=>`<span><i class="dotk k-${k}"></i>${esc(KIND[k])}</span>`).join('');
+$('#mapKey').innerHTML=kinds.map(k=>`<span><i class="dotk k-${k}"></i>${esc(KIND[k])}</span>`).join('');
 
 /* trips as journal entries, newest first */
 const JMAX=5;let jOpen=false;
