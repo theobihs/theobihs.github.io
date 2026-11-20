@@ -74,8 +74,9 @@ window.SITE = {
       photo: 'photos/deadhorse-cabin-family.jpg', story: '',
       photos: ['photos/deadhorse-creek-splash.jpg', 'photos/deadhorse-river-carry.jpg', 'photos/deadhorse-river-log.jpg', 'photos/deadhorse-cottonwoods.jpg', 'photos/deadhorse-pines-pose.jpg', 'photos/deadhorse-pines-seated.jpg', 'photos/deadhorse-trail-sign.jpg', 'photos/deadhorse-cabin-family-2.jpg'] },
     { name: 'Lake Havasu', kind: 'lakes', area: 'Lake Havasu State Park, Lake Havasu City',
-      line: 'A cabin stay on the Colorado River.', lat: 34.50, lon: -114.36,
-      photo: '', story: '' },
+      line: 'A cabin stay on the Colorado River, with sunsets on the beach and a boat ride through the canyon.', lat: 34.50, lon: -114.36,
+      photo: 'photos/havasu-sunset-chairs.jpg', story: '',
+      photos: ['photos/havasu-shore-walk.jpg', 'photos/havasu-beach-pjs.jpg', 'photos/havasu-sunset-buoys.jpg', 'photos/havasu-cabin.jpg', 'photos/havasu-boat-dad.jpg', 'photos/havasu-canyon-cove.jpg', 'photos/havasu-phone-booth.jpg'] },
     { name: 'Alamo Lake', kind: 'lakes', area: 'Alamo Lake State Park, near Wenden',
       line: 'A cabin stay on quiet water, far from everything.', lat: 34.23, lon: -113.58,
       photo: '', story: '' },
@@ -95,6 +96,10 @@ window.SITE = {
        { youtube: 'dQw4w9WgXcQ', caption: 'Grand Canyon day' },   (the code after v= in a YouTube link)
      While this list is empty, the site shows the paintings instead. */
   gallery: [
+    { photo: 'photos/havasu-sunset-chairs.jpg', caption: 'Front-row seats to a Lake Havasu sunset' },
+    { photo: 'photos/havasu-shore-walk.jpg', caption: 'An evening walk along the water' },
+    { photo: 'photos/havasu-canyon-cove.jpg', caption: 'Boat ride through the canyon, Lake Havasu' },
+    { photo: 'photos/havasu-phone-booth.jpg', caption: 'By the London Bridge' },
     { photo: 'photos/deadhorse-cabin-family.jpg', caption: 'Our cabin at Dead Horse Ranch' },
     { video: 'videos/deadhorse-creek.mp4', caption: 'Splashing in the creek at Dead Horse Ranch' },
     { photo: 'photos/deadhorse-river-carry.jpg', caption: 'Crossing the Verde River' },
