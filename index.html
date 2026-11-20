@@ -47,25 +47,7 @@ nav.scroll{display:flex;gap:4px;margin-left:auto}
 nav a{padding:10px 12px;text-decoration:none;font-size:15px;font-weight:500;white-space:nowrap;opacity:.85}
 nav a:hover{opacity:1;color:var(--gold)}
 
-/* colour switch */
-.look{display:flex;flex:none;border:1px solid rgba(246,234,219,.35);border-radius:999px;padding:3px}
-.look button{min-height:36px;padding:0 12px;border-radius:999px;border:0;background:none;cursor:pointer;font-size:14px;color:inherit}
-.look button[aria-pressed=true]{background:var(--gold);color:#2b1d15}
-/* white look */
-:root[data-look=white]{--night:#ffffff;--earth:#f7f4ef;--paper:#ffffff;--ink:#2b1d15;--cream:#2b1d15;--mist:#7a6a5e;--line:rgba(43,29,21,.12)}
-:root[data-look=white] body{background:#fff}
-:root[data-look=white] .topo{background-color:#f7f4ef}
-:root[data-look=white] header:not(.solid){color:#fff7ee}
-:root[data-look=white] header.solid{background:rgba(255,255,255,.95)}
-:root[data-look=white] .mapCard{background:#fff}
-:root[data-look=white] .gb{background:#f7f4ef;color:var(--ink)}
-:root[data-look=white] .gb input[type=text],:root[data-look=white] .gb textarea{background:#fff;border-color:var(--line);color:var(--ink)}
-:root[data-look=white] .gb input::placeholder,:root[data-look=white] .gb textarea::placeholder{color:#9a8a7e}
-:root[data-look=white] .gb .btn{background:var(--orange)}
-:root[data-look=white] .entries div{border-color:var(--line)}
-:root[data-look=white] .look{border-color:var(--line)}
-:root[data-look=white] .facts span,:root[data-look=white] .hero p{color:#f3e2d0}
-/* hero */
+
 .hero{position:relative;min-height:min(92vh,860px);display:flex;align-items:flex-end;overflow:hidden;color:#fff7ee}
 .hero>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 @media(min-width:900px){
@@ -181,7 +163,7 @@ dialog .body{padding:24px 28px 30px}
 .close{position:absolute;top:12px;right:12px;z-index:2;width:44px;height:44px;border-radius:50%;border:0;background:rgba(0,0,0,.45);color:#fff;font-size:22px;cursor:pointer}
 
 @media(max-width:900px){.intro,.mapGrid,.two,.fgrid{grid-template-columns:minmax(0,1fr)}.places{grid-template-columns:repeat(2,minmax(0,1fr))}.place,.place:nth-child(n){grid-column:span 1;aspect-ratio:4/5}.place:nth-child(1){grid-column:span 2;aspect-ratio:3/2}}
-@media(max-width:600px){.brand span{display:none}.bar{flex-wrap:wrap;gap:0 12px;padding-block:6px}.look{order:2;margin-left:auto}nav.scroll{order:3;width:100%;margin-left:-10px}.places{grid-template-columns:minmax(0,1fr)}.place,.place:nth-child(n){grid-column:span 1;aspect-ratio:4/3}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.brand span{display:none}.bar{flex-wrap:wrap;gap:0 12px;padding-block:6px}nav.scroll{order:3;width:100%;margin-left:-10px}.places{grid-template-columns:minmax(0,1fr)}.place,.place:nth-child(n){grid-column:span 1;aspect-ratio:4/3}.strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
@@ -197,7 +179,6 @@ dialog .body{padding:24px 28px 30px}
   <div class="bar">
     <a class="brand" href="#top"><svg><use href="#mark"/></svg><span>The Obih Adventures</span></a>
     <nav class="scroll" aria-label="Main"><a href="#places">Our trips</a><a href="#map">Map</a><a href="#photos">Photos</a><a href="#bucket">Bucket list</a><a href="#guestbook">Guestbook</a></nav>
-    <div class="look" role="group" aria-label="Colour style"><button data-look="colour" aria-pressed="true">Colourful</button><button data-look="white" aria-pressed="false">White</button></div>
   </div>
 </header>
 
@@ -366,10 +347,6 @@ $('#bList').innerHTML=S.bucketList.length?S.bucketList.map(b=>`<li class="${b.do
 /* guestbook */
 if(S.guestbookLink){$('#gbLink').href=S.guestbookLink}else{$('#guestbook').remove();document.querySelectorAll('a[href="#guestbook"]').forEach(a=>a.closest('li')?a.closest('li').remove():a.remove())}
 
-/* colour switch */
-const setLook=v=>{document.documentElement.dataset.look=v;document.querySelectorAll('.look button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.look===v));store.set('obih-look',v)};
-document.querySelector('.look').addEventListener('click',e=>{const b=e.target.closest('[data-look]');if(b)setLook(b.dataset.look)});
-setLook(store.get('obih-look','colour'));
 
 /* opening photo / video */
 const heroPics=[...(S.heroPhotos||[]),S.heroPhoto].filter(Boolean);
