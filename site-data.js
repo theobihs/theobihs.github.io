@@ -106,7 +106,7 @@ window.SITE = {
 
 Dead Horse Ranch is more remote, and that was part of its charm. The quiet, the cottonwoods along the Verde River and the slower pace felt like home in the simplest way, like the village days of childhood: festive seasons with family and long, unhurried days with grandparents, listening to their wisdom. It helped us understand why camping won us over so quickly. It takes us back to where we come from.
 
-Living far from the home we grew up in, time outdoors keeps us grounded. Faith, family and nature are what sit closest to our hearts, the places where we never have to pretend. Dead Horse Ranch gave us all three.`,
+Living far from the home we grew up in, time outdoors keeps us grounded. Faith, family and nature are what sit closest to our hearts, the places where we never have to pretend.`,
       when: 'July 2025', journey: '', campsite: '', experience: '', moments: '',
       review: { campground: '', location: 0, facilities: 0, scenery: 0, family: 0, overall: 0, again: '', notes: '' },
       photos: ['photos/deadhorse-creek-splash.jpg', 'photos/deadhorse-river-carry.jpg', 'photos/deadhorse-river-log.jpg', 'photos/deadhorse-cottonwoods.jpg', 'photos/deadhorse-pines-pose.jpg', 'photos/deadhorse-pines-seated.jpg', 'photos/deadhorse-trail-sign.jpg', 'photos/deadhorse-cabin-family-2.jpg'] },
