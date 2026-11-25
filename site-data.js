@@ -102,7 +102,11 @@ window.SITE = {
       photos: ['photos/pinetop-bridge-family.jpg', 'photos/pinetop-pattycake.jpg', 'photos/pinetop-shoulders.jpg', 'photos/pinetop-lake-explorer.jpg', 'photos/pinetop-dock.jpg', 'photos/pinetop-blanket.jpg', 'photos/pinetop-shoulders-side.jpg', 'photos/pinetop-silly-face.jpg', 'photos/pinetop-lake-geese.jpg', 'photos/pinetop-tall-pines.jpg', 'photos/pinetop-lake-clouds.jpg', 'photos/pinetop-meadow-sky.jpg', 'photos/family-picnic-2.jpg', 'photos/family-picnic-1.jpg'] },
     { name: 'Dead Horse Ranch', kind: 'lakes', area: 'Dead Horse Ranch State Park, Cottonwood',
       line: 'A cabin stay by the Verde River, with cottonwoods, pines and creek splashing.', lat: 34.76, lon: -112.02,
-      photo: 'photos/deadhorse-cabin-family.jpg', story: '',
+      photo: 'photos/deadhorse-cabin-family.jpg', story: `After Lake Havasu stole our hearts, we wanted more. A dear mentor had camped at Dead Horse Ranch State Park and loved it, so it became our second destination.
+
+Dead Horse Ranch is more remote, and that was part of its charm. The quiet, the cottonwoods along the Verde River and the slower pace felt like home in the simplest way, like the village days of childhood: festive seasons with family and long, unhurried days with grandparents, listening to their wisdom. It helped us understand why camping won us over so quickly. It takes us back to where we come from.
+
+Living far from the home we grew up in, time outdoors keeps us grounded. Faith, family and nature are what sit closest to our hearts, the places where we never have to pretend. Dead Horse Ranch gave us all three.`,
       when: 'July 2025', journey: '', campsite: '', experience: '', moments: '',
       review: { campground: '', location: 0, facilities: 0, scenery: 0, family: 0, overall: 0, again: '', notes: '' },
       photos: ['photos/deadhorse-creek-splash.jpg', 'photos/deadhorse-river-carry.jpg', 'photos/deadhorse-river-log.jpg', 'photos/deadhorse-cottonwoods.jpg', 'photos/deadhorse-pines-pose.jpg', 'photos/deadhorse-pines-seated.jpg', 'photos/deadhorse-trail-sign.jpg', 'photos/deadhorse-cabin-family-2.jpg'] },
