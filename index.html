@@ -417,7 +417,7 @@ dialog.lb::backdrop{background:rgba(10,7,5,.9)}
   <div class="lbCap"><span id="lbCap"></span><span id="lbCount" class="soft small"></span></div>
 </dialog>
 
-<script src="site-data.js"></script>
+<script>document.write('<script src="site-data.js?v='+Date.now()+'"><\/script>')</script>
 <script>
 {
 const $=s=>document.querySelector(s);
